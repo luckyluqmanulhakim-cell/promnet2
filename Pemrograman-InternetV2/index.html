@@ -1,59 +1,36 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky - Portofolio Ghibli Edition</title>
+
+    <title>Lucky - Portofolio</title>
     <link rel="icon" href="logo lukayproject.png">
-    
-    <!-- Google Fonts Ghibli Style -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-    <!-- DEKORASI DEBU GHIBLI (SUSUWATARI) DI SUDUT HALAMAN -->
-    <div class="floating-sprite sprite-top-left">
-        <svg viewBox="0 0 100 100" class="soot-sprite">
-            <circle cx="50" cy="50" r="40" fill="#2C2C2E"/>
-            <!-- Bulu-bulu debu -->
-            <path d="M50 5 L53 15 M20 20 L28 27 M5 50 L15 50 M20 80 L28 73 M50 95 L50 85 M80 80 L72 73 M95 50 L85 50 M80 20 L72 27" stroke="#2C2C2E" stroke-width="6" stroke-linecap="round"/>
-            <!-- Mata kiri -->
-            <circle cx="38" cy="45" r="12" fill="#FFFFFF"/>
-            <circle cx="40" cy="45" r="5" fill="#000000"/>
-            <!-- Mata kanan -->
-            <circle cx="62" cy="45" r="12" fill="#FFFFFF"/>
-            <circle cx="60" cy="45" r="5" fill="#000000"/>
-        </svg>
-    </div>
-
-    <div class="floating-sprite sprite-top-right">
-        <svg viewBox="0 0 100 100" class="soot-sprite">
-            <circle cx="50" cy="50" r="38" fill="#3A3A3C"/>
-            <circle cx="36" cy="46" r="10" fill="#FFFFFF"/>
-            <circle cx="38" cy="46" r="4" fill="#000000"/>
-            <circle cx="60" cy="46" r="10" fill="#FFFFFF"/>
-            <circle cx="58" cy="46" r="4" fill="#000000"/>
-            <!-- Bintang kompeito di tangan -->
-            <polygon points="50,10 53,18 61,18 54,23 57,31 50,26 43,31 46,23 39,18 47,18" fill="#FFB703"/>
-        </svg>
-    </div>
+    <!-- BACKGROUND DECORATION -->
+    <div class="background-noise"></div>
+    <div class="red-glow glow-one"></div>
+    <div class="red-glow glow-two"></div>
 
 
     <!-- HEADER -->
     <header>
+
         <nav>
-            <a href="#" class="nav-logo">
-                <img src="logo lukayproject.png" alt="logo lukayproject">
-                <span>lukay</span>project 🌱
-            </a>
+
+            <div class="nav-logo">
+                <img
+                    src="logo lukayproject.png"
+                    alt="logo lukayproject">
+                lukay<span>project</span>
+            </div>
 
             <div class="nav-status">
-                <span class="status-dot"></span>
-                GHIBLI WORLD ONLINE
+                <span></span>
+                SYSTEM ONLINE
             </div>
 
             <ul>
@@ -64,339 +41,562 @@
                 <li><a href="#Proyek">Proyek</a></li>
                 <li><a href="#Kontak">Kontak</a></li>
             </ul>
+
         </nav>
+
     </header>
 
 
     <main>
 
+
         <!-- ========================= -->
-        <!-- BERANDA (HERO) -->
+        <!-- BERANDA -->
         <!-- ========================= -->
-        <section id="Beranda" class="hero-section">
-            
+
+        <section id="Beranda" class="hero">
+
             <div class="hero-grid">
-                
+
                 <div class="hero-text">
-                    <div class="ghibli-badge">
-                        ✨ WELCOME TO MY PORTFOLIO
+
+                    <div class="terminal-label">
+                        <span>01</span>
+                        USER_PROFILE / DEVELOPER
                     </div>
 
-                    <p class="small-title">HALO, SAYA</p>
-                    <h1>Lucky Luqmanul <span>Hakim</span></h1>
-                    <p class="hero-subtitle">Frontend Developer & Computer Science Education Student 🌱</p>
+                    <p class="small-title">
+                        HALO, SAYA
+                    </p>
+
+                    <h1>
+                        Frontend
+                        <span>Developer.</span>
+                    </h1>
 
                     <p class="hero-description">
-                        Menciptakan website yang menarik, fungsional, dan ramah pengguna dengan sentuhan kreativitas serta estetika yang hangat.
+                        Menciptakan website yang menarik, fungsional,
+                        dan user-friendly untuk solusi digital.
                     </p>
 
                     <div class="hero-buttons">
-                        <a class="btn-primary" href="https://drive.google.com/file/d/1WIfUOVzdFMNwYy8nvwibHAOW4l3-ou8Z/view" target="_blank">
-                            📄 Lihat CV
+
+                        <a
+                            class="btn-primary"
+                            href="https://drive.google.com/file/d/1WIfUOVzdFMNwYy8nvwibHAOW4l3-ou8Z/view"
+                            target="_blank">
+                            Lihat CV
                         </a>
-                        <a class="btn-secondary" href="#Proyek">
-                            🎨 Lihat Proyek <span>→</span>
+
+                        <a
+                            class="btn-secondary"
+                            href="#Proyek">
+                            Lihat Proyek
+                            <span>→</span>
                         </a>
+
                     </div>
+
                 </div>
 
-                <!-- KARAKTER TOTORO & FOTO HERO -->
+
+                <!-- HERO DECORATION -->
+
                 <div class="hero-visual">
-                    <div class="ghibli-card-frame">
-                        <div class="frame-tag">PORTFOLIO_GHIBLI // 2026</div>
-                        <img src="profile.png" alt="Foto Profil Lucky" class="hero-img">
-                        <div class="frame-footer">
-                            <span>🍃 Lucky Luqmanul</span>
-                            <span class="online-tag">ONLINE</span>
-                        </div>
+
+                    <div class="visual-top">
+                        <span>LUCKY.LQ</span>
+                        <span>2502736</span>
                     </div>
 
-                    <!-- TOTORO DUDUK DI SAMPING FOTO -->
-                    <div class="totoro-illustration">
-                        <svg viewBox="0 0 120 140" class="totoro-svg">
-                            <!-- Telinga -->
-                            <ellipse cx="40" cy="25" rx="7" ry="20" fill="#7D8A88" transform="rotate(-10 40 25)"/>
-                            <ellipse cx="80" cy="25" rx="7" ry="20" fill="#7D8A88" transform="rotate(10 80 25)"/>
-                            <!-- Badan -->
-                            <ellipse cx="60" cy="85" rx="45" ry="50" fill="#7D8A88"/>
-                            <!-- Perut Putih -->
-                            <ellipse cx="60" cy="92" rx="32" ry="36" fill="#F4F1DE"/>
-                            <!-- Motif Perut -->
-                            <path d="M48 72 Q52 66 56 72 M64 72 Q68 66 72 72 M56 82 Q60 76 64 82" stroke="#7D8A88" stroke-width="3" fill="none" stroke-linecap="round"/>
-                            <!-- Mata -->
-                            <circle cx="42" cy="52" r="6" fill="#FFFFFF"/>
-                            <circle cx="43" cy="52" r="2.5" fill="#2C2C2E"/>
-                            <circle cx="78" cy="52" r="6" fill="#FFFFFF"/>
-                            <circle cx="77" cy="52" r="2.5" fill="#2C2C2E"/>
-                            <!-- Hidung & Mulut -->
-                            <ellipse cx="60" cy="54" rx="4" ry="2" fill="#2C2C2E"/>
-                            <path d="M52 62 Q60 66 68 62" stroke="#2C2C2E" stroke-width="2" fill="none"/>
-                            <!-- Daun di Kepala -->
-                            <path d="M60 12 C50 0 70 0 60 12 Z" fill="#52B788"/>
-                        </svg>
+                    <div class="orb">
+
+                        <div class="orb-inner">
+                            &lt;/&gt;
+                        </div>
+
+                        <div class="orb-symbol">
+                            +
+                        </div>
+
                     </div>
+
+                    <div class="visual-bottom">
+                        <span>HTML / CSS / JS</span>
+                        <span>EST. 2025</span>
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- STATSTRIP BAWAH HERO -->
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-num">05+</span>
-                    <span class="stat-label">Keahlian Utama</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-num">UPI</span>
-                    <span class="stat-label">Pendidikan Ilkom</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-num">2026</span>
-                    <span class="stat-label">Aktif Berkarya</span>
-                </div>
+
+            <div class="hero-bottom">
+
+                <span>SCROLL TO EXPLORE</span>
+
+                <div></div>
+
+                <span>↓</span>
+
             </div>
 
         </section>
 
 
+
         <!-- ========================= -->
-        <!-- TENTANG SAYA -->
+        <!-- TENTANG -->
         <!-- ========================= -->
+
         <section id="Tentang">
-            
+
             <div class="section-heading">
+
                 <div>
-                    <span class="section-number">02 / ABOUT ME</span>
-                    <h2>Tentang Saya 🌿</h2>
+                    <span class="section-number">02 / ABOUT</span>
+
+                    <h2>Tentang Saya</h2>
                 </div>
-                <!-- KODAMA ICON -->
-                <div class="kodama-icon">
-                    <svg viewBox="0 0 50 60" width="40" height="48">
-                        <ellipse cx="25" cy="22" rx="18" ry="16" fill="#EAE0D5"/>
-                        <circle cx="18" cy="20" r="3" fill="#2B2D42"/>
-                        <circle cx="32" cy="20" r="3" fill="#2B2D42"/>
-                        <ellipse cx="25" cy="28" rx="2" ry="3" fill="#2B2D42"/>
-                        <path d="M25 38 C20 45 20 55 25 58 C30 55 30 45 25 38 Z" fill="#EAE0D5"/>
-                    </svg>
-                </div>
+
+                <span class="section-mark">♤</span>
             </div>
+
 
             <div class="about-content">
-                
-                <div class="about-text-box">
-                    <span class="about-tag">WHO AM I?</span>
-                    <h3>Pengembang Web yang Menyukai Estetika & Keharmonisan Kode</h3>
-                    
-                    <p>
-                        Saya adalah mahasiswa <strong>Pendidikan Ilmu Komputer Universitas Pendidikan Indonesia (NIM 2502736)</strong> yang berfokus pada pengembangan antarmuka web (Frontend).
-                    </p>
-                    <p>
-                        Saya sangat menikmati proses mengubah ide menjadi tampilan web yang interaktif, bersih, ramah pengguna, dan berjiwa seni menggunakan HTML, CSS, serta JavaScript.
-                    </p>
 
-                    <div class="about-pills">
-                        <span>🍃 Frontend Developer</span>
-                        <span>🎓 UPI Edu Student</span>
-                        <span>💻 Web Enthusiast</span>
-                        <span>✍️ Writer & Creator</span>
+                <div class="profile-wrapper">
+
+                    <div class="profile-frame">
+
+                        <div class="frame-top">
+                            PROFILE_01
+                        </div>
+
+                        <img
+                            src="profile.png"
+                            alt="Foto Profil Lucky">
+
+                        <div class="frame-bottom">
+                            <span>LUCKY</span>
+                            <span>ONLINE</span>
+                        </div>
+
                     </div>
+
                 </div>
 
-                <!-- SOOT SPRITES DANCE CARD -->
-                <div class="about-interactive-card">
-                    <div class="card-inner">
-                        <h4>Fakta Singkat 🌟</h4>
-                        <ul>
-                            <li><strong>Nama:</strong> Lucky Luqmanul Hakim</li>
-                            <li><strong>NIM:</strong> 2502736</li>
-                            <li><strong>Prodi:</strong> Pendidikan Ilmu Komputer</li>
-                            <li><strong>Kampus:</strong> Univ. Pendidikan Indonesia</li>
-                            <li><strong>Minat:</strong> UI/UX, Web Dev, Writing</li>
-                        </ul>
+
+                <div class="about-text">
+
+                    <p class="about-label">
+                        WHO AM I?
+                    </p>
+
+                    <h1>
+                        Lucky Luqmanul Hakim
+                    </h1>
+
+                    <h2>
+                        Pendidikan Ilmu Komputer
+                    </h2>
+
+                    <p class="nim">
+                        NIM 2502736
+                    </p>
+
+                    <p>
+                        Saya adalah seorang pengembang web yang
+                        berpengalaman dalam membuat situs web yang
+                        menarik dan fungsional. Saya memiliki keahlian
+                        dalam HTML, CSS, dan JavaScript.
+                    </p>
+
+
+                    <div class="about-line">
+
+                        <span>DEVELOPER</span>
+                        <span>CREATOR</span>
+                        <span>TECH ENTHUSIAST</span>
+
                     </div>
-                    
-                    <div class="mini-sprites-group">
-                        <span class="mini-sprite"></span>
-                        <span class="mini-sprite"></span>
-                        <span class="mini-sprite"></span>
-                    </div>
+
                 </div>
 
             </div>
 
         </section>
+
 
 
         <!-- ========================= -->
         <!-- PENDIDIKAN -->
         <!-- ========================= -->
+
         <section id="Pendidikan">
-            
+
             <div class="section-heading">
+
                 <div>
-                    <span class="section-number">03 / EDUCATION</span>
-                    <h2>Pendidikan 🏫</h2>
+
+                    <span class="section-number">
+                        03 / EDUCATION
+                    </span>
+
+                    <h2>Pendidikan</h2>
+
                 </div>
-                <p class="section-description">Perjalanan akademis yang telah saya tempuh hingga saat ini.</p>
+
+                <span class="section-mark">
+                    ♡
+                </span>
+
             </div>
 
-            <div class="education-timeline">
 
-                <div class="edu-card">
-                    <div class="edu-year">2010 – 2013</div>
-                    <div class="edu-badge">01 / TK</div>
-                    <h3>TK IT Al-Hidayah</h3>
-                    <p>Pendidikan Usia Dini</p>
-                </div>
+            <p class="section-description">
+                Perjalanan pendidikan yang telah saya tempuh.
+            </p>
 
-                <div class="edu-card">
-                    <div class="edu-year">2013 – 2019</div>
-                    <div class="edu-badge">02 / SD</div>
-                    <h3>SDN Sanca 3</h3>
-                    <p>Pendidikan Dasar</p>
-                </div>
 
-                <div class="edu-card">
-                    <div class="edu-year">2019 – 2022</div>
-                    <div class="edu-badge">03 / MTs</div>
-                    <h3>MTs Al-Hidayah</h3>
-                    <p>Pendidikan Menengah Pertama</p>
-                </div>
+            <div class="table-wrapper">
 
-                <div class="edu-card">
-                    <div class="edu-year">2022 – 2025</div>
-                    <div class="edu-badge">04 / SMA</div>
-                    <h3>MAN 1 Subang</h3>
-                    <p>Pendidikan Menengah Atas</p>
-                </div>
+                <table>
 
-                <div class="edu-card active-edu">
-                    <div class="edu-year">2025 – Sekarang</div>
-                    <div class="edu-badge current-badge">05 / COLLEGE</div>
-                    <h3>Universitas Pendidikan Indonesia</h3>
-                    <p>S1 Pendidikan Ilmu Komputer</p>
-                </div>
+                    <tr>
+
+                        <th>
+                            LEVEL
+                        </th>
+
+                        <th>
+                            INSTITUTION
+                        </th>
+
+                        <th>
+                            YEAR
+                        </th>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <span class="table-number">01</span>
+                            TK
+                        </td>
+
+                        <td>
+                            TK IT Al-Hidayah
+                        </td>
+
+                        <td>
+                            2010–2013
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <span class="table-number">02</span>
+                            SD
+                        </td>
+
+                        <td>
+                            SDN Sanca 3
+                        </td>
+
+                        <td>
+                            2013–2019
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <span class="table-number">03</span>
+                            MTs
+                        </td>
+
+                        <td>
+                            MTs AL-Hidayah
+                        </td>
+
+                        <td>
+                            2019–2022
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <span class="table-number">04</span>
+                            SMA
+                        </td>
+
+                        <td>
+                            MAN 1 Subang
+                        </td>
+
+                        <td>
+                            2022–2025
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="current">
+
+                        <td>
+                            <span class="table-number">05</span>
+                            Universitas
+                        </td>
+
+                        <td>
+                            Universitas Pendidikan Indonesia
+                        </td>
+
+                        <td>
+                            2025–Sekarang
+                        </td>
+
+                    </tr>
+
+                </table>
 
             </div>
 
         </section>
+
 
 
         <!-- ========================= -->
         <!-- KEAHLIAN -->
         <!-- ========================= -->
+
         <section id="Keahlian">
-            
+
             <div class="section-heading">
+
                 <div>
-                    <span class="section-number">04 / SKILLS</span>
-                    <h2>Keahlian & Kemampuan ✨</h2>
+
+                    <span class="section-number">
+                        04 / SKILLS
+                    </span>
+
+                    <h2>Keahlian</h2>
+
                 </div>
-                <p class="section-description">Teknologi dan keterampilan yang terus saya kembangkan.</p>
+
+                <span class="section-mark">
+                    ♧
+                </span>
+
             </div>
 
-            <div class="skills-grid">
 
-                <div class="skill-card">
-                    <div class="skill-head">
-                        <span class="skill-icon">🌐</span>
-                        <span class="skill-num">01</span>
-                    </div>
-                    <h4>HTML5</h4>
-                    <p>Struktur Web Semantik & Aksesibilitas</p>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-                </div>
+            <p class="section-description">
+                Beberapa teknologi dan kemampuan yang saya miliki.
+            </p>
 
-                <div class="skill-card">
-                    <div class="skill-head">
-                        <span class="skill-icon">🎨</span>
-                        <span class="skill-num">02</span>
-                    </div>
-                    <h4>CSS3 / Styling</h4>
-                    <p>Flexbox, Grid, Responsive Design & Animation</p>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
-                </div>
 
-                <div class="skill-card">
-                    <div class="skill-head">
-                        <span class="skill-icon">✨</span>
-                        <span class="skill-num">03</span>
-                    </div>
-                    <h4>UI / UX Design</h4>
-                    <p>Desain Antarmuka Ramah Pengguna & Estetik</p>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
-                </div>
+            <ol class="skills">
 
-                <div class="skill-card">
-                    <div class="skill-head">
-                        <span class="skill-icon">⚡</span>
-                        <span class="skill-num">04</span>
-                    </div>
-                    <h4>JavaScript</h4>
-                    <p>Logika Interaktif & Pemrograman Web</p>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
-                </div>
 
-                <div class="skill-card">
-                    <div class="skill-head">
-                        <span class="skill-icon">✍️</span>
-                        <span class="skill-num">05</span>
-                    </div>
-                    <h4>Technical Writing</h4>
-                    <p>Penulisan Konten Pembelajaran & Dokumentasi</p>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
-                </div>
+                <li>
 
-            </div>
+                    <span class="skill-number">
+                        01
+                    </span>
+
+                    <span class="skill-name">
+                        HTML
+                    </span>
+
+                    <span class="skill-arrow">
+                        ↗
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="skill-number">
+                        02
+                    </span>
+
+                    <span class="skill-name">
+                        CSS
+                    </span>
+
+                    <span class="skill-arrow">
+                        ↗
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="skill-number">
+                        03
+                    </span>
+
+                    <span class="skill-name">
+                        UI/UX
+                    </span>
+
+                    <span class="skill-arrow">
+                        ↗
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="skill-number">
+                        04
+                    </span>
+
+                    <span class="skill-name">
+                        JavaScript
+                    </span>
+
+                    <span class="skill-arrow">
+                        ↗
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <span class="skill-number">
+                        05
+                    </span>
+
+                    <span class="skill-name">
+                        Writing
+                    </span>
+
+                    <span class="skill-arrow">
+                        ↗
+                    </span>
+
+                </li>
+
+
+            </ol>
 
         </section>
+
 
 
         <!-- ========================= -->
         <!-- PROYEK -->
         <!-- ========================= -->
+
         <section id="Proyek">
-            
+
             <div class="section-heading">
+
                 <div>
-                    <span class="section-number">05 / PORTFOLIO</span>
-                    <h2>Proyek Unggulan 🚀</h2>
+
+                    <span class="section-number">
+                        05 / PROJECT
+                    </span>
+
+                    <h2>Proyek</h2>
+
                 </div>
-                <p class="section-description">Karya web yang telah saya kembangkan.</p>
+
+                <span class="section-mark">
+                    ◇
+                </span>
+
             </div>
 
-            <article class="project-ghibli-card">
-                
-                <div class="project-preview">
-                    <div class="preview-header">
-                        <span>PROJECT_01 // LIVE WEBSITE</span>
-                        <span class="live-dot">● LIVE</span>
+
+            <p class="section-description">
+                Beberapa proyek yang telah saya kerjakan.
+            </p>
+
+
+            <article class="project-card">
+
+
+                <div class="project-image">
+
+                    <div class="project-bar">
+
+                        <span>
+                            PROJECT_01
+                        </span>
+
+                        <span>
+                            ● LIVE
+                        </span>
+
                     </div>
-                    <img src="duniakalkulus.png" alt="Website Dunia Kalkulus">
+
+
+                    <img
+                        src="duniakalkulus.png"
+                        alt="Foto Dunia Kalkulus">
+
                 </div>
 
-                <div class="project-details">
-                    <span class="project-tag">MATH & TECH PLATFORM</span>
-                    <h3>Website Dunia Kalkulus</h3>
-                    
-                    <p>
-                        <strong>Dunia Kalkulus</strong> adalah platform pembelajaran interaktif yang dirancang untuk membantu mahasiswa dan pelajar memahami konsep matematika kalkulus dengan visualisasi yang menarik dan mudah dipahami.
-                    </p>
-                    <p>
-                        Dilengkapi dengan materi terstruktur dari dasar hingga lanjutan, latihan soal interaktif, dan navigasi yang responsif.
+
+
+                <div class="project-info">
+
+                    <p class="project-number">
+                        PROJECT / 001
                     </p>
 
-                    <div class="tech-stack">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Firebase</span>
-                    </div>
+                    <h3>
+                        Website Dunia Kalkulus
+                    </h3>
 
-                    <a href="https://duniakalkulus.web.app/" target="_blank" class="btn-project">
-                        🚀 Buka Website Dunia Kalkulus <span>→</span>
+
+                    <p>
+                        Website Dunia Kalkulus adalah platform
+                        pembelajaran yang dirancang khusus untuk
+                        membantu mahasiswa dan pelajar memahami
+                        konsep-konsep kalkulus secara visual dan
+                        interaktif.
+                    </p>
+
+
+                    <p>
+                        Website ini dilengkapi dengan materi yang
+                        terstruktur dari dasar hingga lanjutan,
+                        latihan soal interaktif, dan visualisasi
+                        grafis yang memudahkan pemahaman materi
+                        matematika yang kompleks.
+                    </p>
+
+
+                    <a
+                        href="https://duniakalkulus.web.app/"
+                        target="_blank"
+                        class="project-link">
+
+                        ENTER PROJECT
+
+                        <span>→</span>
+
                     </a>
+
                 </div>
 
             </article>
@@ -404,87 +604,171 @@
         </section>
 
 
+
         <!-- ========================= -->
         <!-- KONTAK -->
         <!-- ========================= -->
+
         <section id="Kontak">
-            
+
             <div class="section-heading">
+
                 <div>
-                    <span class="section-number">06 / CONTACT</span>
-                    <h2>Mari Terhubung 💌</h2>
+
+                    <span class="section-number">
+                        06 / CONTACT
+                    </span>
+
+                    <h2>Kontak</h2>
+
                 </div>
+
+                <span class="section-mark">
+                    🖂
+                </span>
+
             </div>
 
-            <div class="contact-grid">
 
-                <!-- INFORMASI KONTAK -->
-                <div class="contact-info-card">
-                    <h3>Ada yang ingin didiskusikan? 🌱</h3>
-                    <p>Saya selalu terbuka untuk kolaborasi, proyek web baru, atau sekadar bertegur sapa!</p>
+            <div class="contact-content">
+
+
+                <div class="contact-info">
+
+                    <p class="about-label">
+                        LET'S CONNECT
+                    </p>
+
+
+                    <h2>
+                        Punya sesuatu untuk dibicarakan?
+                    </h2>
+
+
+                    <p>
+                        Jika Anda ingin menghubungi saya,
+                        silakan gunakan informasi berikut.
+                    </p>
+
 
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <span>EMAIL</span>
-                            <a href="mailto:luckyluqmanulhakim@upi.edu">luckyluqmanulhakim@upi.edu</a>
-                        </div>
+
+                        <span>
+                            EMAIL
+                        </span>
+
+                        <a href="mailto:luckyluqmanulhakim@upi.edu">
+                            luckyluqmanulhakim@upi.edu
+                        </a>
+
                     </div>
+
 
                     <div class="contact-item">
-                        <div class="contact-icon">💬</div>
-                        <div>
-                            <span>WHATSAPP</span>
-                            <a href="https://wa.me/62859110122200" target="_blank">+62 859-1101-22200</a>
-                        </div>
+
+                        <span>
+                            WHATSAPP
+                        </span>
+
+                        <img src="https://images.seeklogo.com/logo-png/16/2/whatsapp-logo-png_seeklogo-168310.png" alt="logo wa">
+
+                        <a
+                            href="https://wa.me/62859110122200"
+                            target="_blank">
+
+                            Hubungi di WhatsApp
+
+                        </a>
+
                     </div>
 
-                    <!-- CALCIFER CHARACTER AT CONTACT SECTION -->
-                    <div class="calcifer-box">
-                        <svg viewBox="0 0 100 120" class="calcifer-svg">
-                            <!-- Api Luar -->
-                            <path d="M50 10 Q75 40 85 70 Q95 100 50 115 Q5 100 15 70 Q25 40 50 10 Z" fill="#E76F51"/>
-                            <!-- Api Dalam -->
-                            <path d="M50 30 Q68 50 75 75 Q80 98 50 108 Q20 98 25 75 Q32 50 50 30 Z" fill="#F4A261"/>
-                            <path d="M50 50 Q60 65 65 80 Q70 95 50 102 Q30 95 35 80 Q40 65 50 50 Z" fill="#E9C46A"/>
-                            <!-- Mata -->
-                            <ellipse cx="38" cy="65" rx="7" ry="9" fill="#FFFFFF"/>
-                            <circle cx="40" cy="65" r="3" fill="#2C2C2E"/>
-                            <ellipse cx="62" cy="65" rx="7" ry="9" fill="#FFFFFF"/>
-                            <circle cx="60" cy="65" r="3" fill="#2C2C2E"/>
-                            <!-- Mulut Senyum -->
-                            <path d="M42 82 Q50 90 58 82" stroke="#2C2C2E" stroke-width="3" fill="none" stroke-linecap="round"/>
-                        </svg>
-                        <p>"Kirimkan pesanmu, aku akan menyampaikannya!" - Calcifer</p>
-                    </div>
                 </div>
 
-                <!-- FORM PESAN -->
-                <div class="contact-form-card">
-                    <div class="form-title">
-                        <span>✉️ KIRIM PESAN</span>
+
+
+                <div class="contact-form">
+
+                    <div class="form-header">
+
+                        <span>
+                            MESSAGE_TERMINAL
+                        </span>
+
+                        <span>
+                            ●
+                        </span>
+
                     </div>
 
-                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.');">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" required placeholder="Masukkan nama lengkap Anda">
-                        </div>
 
-                        <div class="form-group">
-                            <label for="email">Alamat Email</label>
-                            <input type="email" id="email" required placeholder="nama@email.com">
-                        </div>
+                    <h3>
+                        Kirim Pesan
+                    </h3>
 
-                        <div class="form-group">
-                            <label for="pesan">Pesan Anda</label>
-                            <textarea id="pesan" rows="4" required placeholder="Tuliskan pesan atau ide proyek Anda di sini..."></textarea>
-                        </div>
 
-                        <button type="submit" class="btn-send">
-                            🚀 Kirim Pesan Sekarang
+                    <form>
+
+
+                        <label for="name">
+                            Nama Lengkap
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Masukkan nama lengkap">
+
+
+                        <label for="email">
+                            Alamat Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Masukkan alamat email">
+
+
+                        <label for="pw">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="pw"
+                            name="password"
+                            placeholder="Masukkan password">
+
+
+                        <label for="ttl">
+                            Tanggal Lahir
+                        </label>
+
+                        <input
+                            type="date"
+                            id="ttl"
+                            name="ttl">
+
+
+                        <label for="pesan">
+                            Pesan
+                        </label>
+
+                        <textarea
+                            id="pesan"
+                            name="pesan"
+                            rows="4"
+                            placeholder="Tulis pesan kamu..."></textarea>
+
+
+                        <button type="submit">
+                            SEND TO DEVELOPER →
                         </button>
+
                     </form>
+
                 </div>
 
             </div>
@@ -494,48 +778,141 @@
     </main>
 
 
+
     <!-- ========================= -->
     <!-- FOOTER -->
     <!-- ========================= -->
+
     <footer>
-        <div class="footer-container">
-            
-            <div class="footer-brand">
+
+
+        <div class="footer-top">
+
+
+            <div class="footer-main">
+
                 <div class="footer-logo">
-                    <img src="logo lukayproject.png" alt="logo lukayproject">
-                    <span>lukayproject</span>
+                    <img
+                            src="logo lukayproject.png"
+                            alt="logo lukayproject">
                 </div>
-                <p>Frontend Developer & Student Pendidikan Ilmu Komputer UPI.</p>
-                <div class="footer-leaves">🍃 🌸 🌿 🍄</div>
+
+                <p>
+                    Frontend Developer &
+                    Computer Science Edu Student.
+                </p>
+
+                <div class="footer-symbol">
+                    ♤♡♧◇
+                </div>
+
             </div>
 
-            <div class="footer-nav">
-                <h4>Navigasi</h4>
+
+
+            <div>
+
+                <h3>
+                    Navigasi
+                </h3>
+
                 <ul>
-                    <li><a href="#Beranda">Beranda</a></li>
-                    <li><a href="#Tentang">Tentang</a></li>
-                    <li><a href="#Pendidikan">Pendidikan</a></li>
-                    <li><a href="#Keahlian">Keahlian</a></li>
-                    <li><a href="#Proyek">Proyek</a></li>
-                    <li><a href="#Kontak">Kontak</a></li>
+
+                    <li>
+                        <a href="#Beranda">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#Tentang">
+                            Tentang
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#Pendidikan">
+                            Pendidikan
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#Keahlian">
+                            Keahlian
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#Proyek">
+                            Proyek
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#Kontak">
+                            Kontak
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
 
-            <div class="footer-social">
-                <h4>Media Sosial</h4>
+
+
+            <div>
+
+                <h3>
+                    Social
+                </h3>
+
                 <ul>
-                    <li><a href="https://www.instagram.com/luckyluqmn" target="_blank">Instagram</a></li>
-                    <li><a href="https://id.linkedin.com/in/lucky-luqmanul-hakim-16319437b" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://www.facebook.com/luckyluqmanulhakim" target="_blank">Facebook</a></li>
+
+                    <li>
+                        <a
+                            href="https://www.facebook.com/luckyluqmanulhakim"
+                            target="_blank">
+                            Facebook
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.instagram.com/luckyluqmn"
+                            target="_blank">
+                            Instagram
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://id.linkedin.com/in/lucky-luqmanul-hakim-16319437b"
+                            target="_blank">
+                            LinkedIn
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
+
 
         </div>
+
 
         <div class="footer-bottom">
-            <span>© 2026 Lucky Luqmanul Hakim. Made with Ghibli Spirit 🌱</span>
-            <span>ALL RIGHTS RESERVED</span>
+
+            <span>
+                © 2026 Lucky Luqmanul Hakim.
+            </span>
+
+            <span>
+                ALL RIGHTS RESERVED.
+            </span>
+
         </div>
+
+
     </footer>
     <script src="main.js"></script>
 

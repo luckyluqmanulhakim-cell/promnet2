@@ -1,3 +1,4 @@
+/*
 // Meminta input dari pengguna dan mengonversinya ke tipe data Number
 let saldoAwal = Number(prompt("Masukkan saldo awal Anda (Rp):"));
 let saldoTambahan = Number(prompt("Masukkan saldo tambahan Anda (Rp):"));
@@ -8,6 +9,8 @@ let saldoAkhir = saldoAwal + saldoTambahan;
 // Menampilkan hasil kepada pengguna
 alert(`Saldo awal Anda: Rp${saldoAwal}\nSaldo tambahan: Rp${saldoTambahan}\nTotal saldo akhir Anda: Rp${saldoAkhir}`);
 
+/*==========================================================================================================================*/
+/*
 // Mendapatkan indeks hari saat ini (0 = Minggu, 1 = Senin, ..., 6 = Sabtu)
 let dayIndex = new Date().getDay();
 let namaHari;
@@ -39,4 +42,24 @@ switch (dayIndex) {
 }
 
 console.log(`Hari ini adalah hari: ${namaHari}`);
-alert(`Hari ini adalah hari: ${namaHari}`);
+alert(`Hari ini adalah hari: ${namaHari}`); */
+
+console.log("file script.js (JavaScript Eksternal) ");
+
+let namaLengkap = "Lukay Project";
+let tagline = "Hacker wkwk";
+let jurusan = "Pendidikan Ilmu Komputer";
+let tahunMasuk = 2025;
+let sedangMencariMagang = true;
+
+//tipe data
+console.log("namaLengkap adalah tipe :", typeof namaLengkap);
+console.log("tahunMasuk adalah tipe :", typeof tahunMasuk);
+console.log("sedangMencariMagang :", typeof sedangMencariMagang);
+
+let pesanSambutan = "Halo, Saya " + namaLengkap + ", mahasiswa ";
+console.log(pesanSambutan);
+//getElementById
+
+
+//output ke 3

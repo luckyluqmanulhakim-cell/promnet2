@@ -8,8 +8,6 @@ let saldoAkhir = saldoAwal + saldoTambahan;
 // Menampilkan hasil kepada pengguna
 alert(`Saldo awal Anda: Rp${saldoAwal}\nSaldo tambahan: Rp${saldoTambahan}\nTotal saldo akhir Anda: Rp${saldoAkhir}`);
 
-/*==========================================================================================================================*/
-
 // Mendapatkan indeks hari saat ini (0 = Minggu, 1 = Senin, ..., 6 = Sabtu)
 let dayIndex = new Date().getDay();
 let namaHari;

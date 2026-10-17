@@ -1,0 +1,4601 @@
+/* Lukayproject — gaya scrapbook yang tetap ringan dan mudah diubah */
+
+:root {
+  --green: #0b7a30;
+  --green-dark: #064a22;
+  --yellow: #f6b800;
+  --yellow-soft: #ffdf65;
+  --cream: #f4f1eb;
+  --navy: #1b2d9a;
+  --red: #d8321c;
+  --ink: #24332b;
+  --muted: #657066;
+  --hand: "Gaegu", "Comic Sans MS", cursive;
+  --body: "Montserrat", Arial, sans-serif;
+  --display: "Archivo Black", "Arial Black", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  font-family: var(--body);
+  line-height: 1.65;
+  background: var(--green) url("assets/bg-hijau.webp") center top / cover fixed no-repeat;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 44, 19, .16), transparent 20%, transparent 80%, rgba(0, 44, 19, .16));
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--cream);
+  background: var(--green-dark);
+}
+
+/* Header: kertas krem yang menempel di bagian atas */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 10px 3vw 0;
+  background: linear-gradient(180deg, rgba(5, 55, 26, .94), rgba(5, 55, 26, .72));
+  backdrop-filter: blur(10px);
+}
+
+.nav-wrap {
+  max-width: 1240px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 7px 6px rgba(0,0,0,.2));
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #fff9e6;
+  border: 2px solid rgba(11,122,48,.18);
+  box-shadow: 2px 3px 0 rgba(11,122,48,.18);
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-name {
+  font: 700 29px/1 var(--hand);
+  letter-spacing: -.5px;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+
+.brand-name span {
+  color: var(--navy);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(8px, 1.4vw, 21px);
+}
+
+.nav-link {
+  font-size: 11px;
+  font-weight: 800;
+  color: #24372b;
+  position: relative;
+  padding: 7px 0;
+  white-space: nowrap;
+  transition: color .2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background: var(--yellow);
+  border-radius: 99px;
+  transform: rotate(-2deg);
+  transition: width .2s ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--green);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  padding: 8px;
+  background: var(--yellow);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px;
+  border-radius: 10px;
+  background: var(--green-dark);
+}
+
+main {
+  width: 100%;
+}
+
+.opening-area {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 14px 22px 0;
+}
+
+/* Judul portofolio dan amplop berada sebelum buku utama */
+
+.top-peripherals {
+  min-height: 220px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 38px 0;
+  position: relative;
+}
+
+.envelope-caption {
+  margin: 0 0 12px;
+  color: #ffe277;
+  font: 700 22px/1.1 var(--hand);
+  letter-spacing: .2px;
+  transform: rotate(-2deg);
+}
+
+.envelope-caption span {
+  display: inline-block;
+  padding-left: 7px;
+  color: var(--yellow);
+  font-size: 29px;
+}
+
+.envelope-widget {
+  width: min(360px, 43%);
+  text-align: center;
+  position: relative;
+  margin-top: -3px;
+}
+
+.envelope-caption {
+  margin-bottom: 0;
+  text-align: right;
+  padding-right: 24px;
+  font-size: 20px;
+}
+
+.envelope-scene {
+  display: block;
+  width: 100%;
+  height: 218px;
+  position: relative;
+  isolation: isolate;
+}
+
+.envelope-trigger {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.letter-paper {
+  position: absolute;
+  z-index: 1;
+  width: 47%;
+  height: auto;
+  left: 26.5%;
+  top: -25%;
+  transform: translateY(38%);
+  transform-origin: 50% 100%;
+  transition: transform .7s cubic-bezier(.2,.8,.2,1);
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,.15));
+}
+
+.letter-message {
+  position: absolute;
+  z-index: 2;
+  width: 33%;
+  left: 33.5%;
+  top: -10%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+  font-family: var(--hand);
+  line-height: 1.05;
+  color: var(--navy);
+  opacity: 0;
+  transform: translateY(38%);
+  transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .25s ease;
+  pointer-events: none;
+}
+
+.letter-message strong {
+  font-size: 18px;
+}
+
+.letter-message span {
+  font-size: 14px;
+}
+
+.letter-message em {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 2px;
+}
+
+.envelope-widget.is-open .letter-paper {
+  transform: translateY(-5%);
+}
+
+.envelope-widget.is-open .letter-message {
+  transform: translateY(-5%);
+  opacity: 1;
+  transition-delay: .12s;
+}
+
+.tap-hint {
+  margin: -8px 0 0;
+  color: #fff1bc;
+  font: 700 17px var(--hand);
+}
+
+.envelope-widget.is-open .tap-hint {
+  color: #ffdf65;
+}
+
+/* Buku utama: teks dan foto adalah elemen HTML, bukan gambar satu halaman */
+
+.intro-book {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  aspect-ratio: 610 / 409;
+  scroll-margin-top: 110px;
+}
+
+.book-art {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  object-fit: fill;
+  filter: drop-shadow(0 14px 15px rgba(0,0,0,.2));
+}
+
+/* Tulisan About Me di pojok kiri atas buku */
+.about-me-label {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+  width: clamp(110px, 17%, 195px);
+  height: auto;
+  display: block;
+  z-index: 3;
+  transform: rotate(-4deg);
+  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, .15));
+  pointer-events: none;
+}
+
+/* Penyesuaian untuk layar HP */
+@media (max-width: 760px) {
+  .about-me-label {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: clamp(105px, 30vw, 145px);
+    margin: 0 0 -20px 14px;
+    transform: rotate(-4deg);
+  }
+}
+
+.intro-layout {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: .88fr 1.12fr;
+  align-items: center;
+  gap: 4%;
+  padding: 10% 9% 9%;
+}
+
+.portrait-side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.portrait-paper {
+  position: relative;
+  width: min(100%, 330px);
+  aspect-ratio: 448 / 557;
+  transform: rotate(-2.5deg);
+}
+
+.lined-paper {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  inset: 0;
+  filter: drop-shadow(3px 6px 5px rgba(0,0,0,.13));
+}
+
+.portrait-photo {
+  position: absolute;
+  width: 72%;
+  height: 62%;
+  left: 14%;
+  top: 14%;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 6px solid #fff9e9;
+  box-shadow: 2px 4px 7px #0003;
+  transform: rotate(1.5deg);
+}
+
+.photo-pin {
+  position: absolute;
+  z-index: 4;
+  width: 42px;
+  height: 62px;
+  right: 12%;
+  top: -4%;
+  margin-top: 17px !important;
+  margin-right: -3px !important;
+  transform: rotate(22deg);
+  filter: drop-shadow(1px 3px 3px #0004);
+}
+
+.photo-star {
+  position: absolute;
+  color: var(--yellow);
+  text-shadow: 1px 2px 0 rgba(131,81,0,.18);
+  font-size: 48px;
+  line-height: 1;
+}
+
+.star-one {
+  left: 3%;
+  bottom: 23%;
+  transform: rotate(-18deg);
+}
+
+.star-two {
+  right: 0;
+  bottom: 8%;
+  font-size: 54px;
+  transform: rotate(13deg);
+}
+
+.photo-caption {
+  max-width: 270px;
+  margin: -4px auto 0;
+  color: var(--green-dark);
+  font: 700 19px/1.1 var(--hand);
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.intro-copy {
+  padding: 8px 0;
+}
+
+.eyebrow,
+.section-kicker,
+.form-kicker {
+  margin: 0 0 8px;
+  color: var(--green);
+  font: 700 20px/1.15 var(--hand);
+}
+
+.eyebrow {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.eyebrow-dot {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 4px rgba(216,50,28,.13);
+}
+
+h1,h2,h3,p {
+  overflow-wrap: anywhere;
+}
+
+.intro-copy h1 {
+  margin: 3px 0 8px;
+  font: 46px/.95 var(--display);
+  letter-spacing: -1.7px;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+
+.intro-copy h1 span {
+  display: inline-block;
+  padding-top: 5px;
+  color: var(--green);
+  font-size: clamp(26px, 3.1vw, 41px);
+}
+
+.intro-role {
+  margin: 12px 0 14px;
+  color: #76511c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.intro-description {
+  margin: 0 0 10px;
+  max-width: 530px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #373f36;
+}
+
+.profile-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0 19px;
+}
+
+.profile-facts span {
+  padding: 4px 9px;
+  border: 1px dashed rgba(11,122,48,.55);
+  border-radius: 4px;
+  color: #354538;
+  background: rgba(255,255,255,.42);
+  font: 15px/1.15 var(--hand);
+}
+
+.profile-facts b {
+  color: var(--green-dark);
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.sticker-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 17px 9px;
+  border: 2px solid rgba(28,49,36,.85);
+  border-radius: 999px;
+  box-shadow: 3px 4px 0 rgba(15,43,25,.55);
+  font: 700 18px/1.05 var(--hand);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.sticker-button:hover {
+  transform: translate(-2px,-3px) rotate(-1deg);
+  box-shadow: 5px 7px 0 rgba(15,43,25,.45);
+}
+
+.sticker-button span {
+  font-family: var(--body);
+  font-size: 14px;
+}
+
+.button-green {
+  color: #fff9e8;
+  background: var(--green);
+}
+
+.button-paper {
+  color: var(--navy);
+  background: #fbf6e8;
+}
+
+/* ─── Pemutar audio mini ─── */
+
+.spotify-popup-mini {
+  position: absolute !important;
+
+  /* Paksa mengunci posisi elemen */
+
+  top: 1015px !important;
+
+  /* Paksa naik ke atas, ganti ke 400px jika kurang naik */
+
+  left: 900px !important;
+  width: 320px;
+  background-color: #0c2309;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border: 1px solid #282828;
+  display: flex;
+  flex-direction: column;
+
+  /* Membuat susunan atas-bawah */
+
+  gap: 10px;
+  z-index: 999;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  transform: scale(0.80);
+
+  /* Ukuran pemutar mini menjadi 80% dari ukuran aslinya */
+
+  transform-origin: top left;
+
+  /* Mengunci titik pengecilan di pojok kiri atas agar posisi koordinat top/left tidak bergeser */
+}
+
+/* Baris Atas */
+
+.mini-top-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mini-art {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.mini-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.mini-title {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-artist {
+  color: #b3b3b3;
+  font-size: 11px;
+  margin: 0;
+}
+
+/* ─── Tombol play/pause pemutar lagu ─── */
+
+.btn-mini-play {
+  background-color: #ffffff !important;
+
+  /* Latar belakang tombol bulat wajib putih */
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  padding: 0;
+}
+
+/* Warna ikon play/pause */
+
+.btn-mini-play i {
+  color: #121212 !important;
+
+  /* Memaksa warna ikon jadi hitam */
+
+  font-size: 14px !important;
+
+  /* Ukuran ikon pas di tengah */
+
+  display: inline-block !important;
+  opacity: 1 !important;
+
+  /* Memastikan tidak transparan */
+}
+
+.btn-mini-play:hover {
+  transform: scale(1.05);
+}
+
+/* Baris Bawah (Waktu & Bar) */
+
+.mini-time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.time-text {
+  color: #a7a7a7;
+  font-size: 11px;
+  width: 28px;
+  text-align: center;
+}
+
+.mini-progress-bar {
+  flex-grow: 1;
+  height: 4px;
+  background-color: #4d4d4d;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mini-progress-juice {
+  height: 100%;
+  width: 0%;
+  background-color: #1db954;
+
+  /* Hijau Spotify */
+
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+/* Garis putus-putus dibuat dengan CSS agar mudah ikut berubah pada layar kecil */
+
+.section-divider {
+  width: min(950px, 76%);
+  margin: 22px auto 35px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: #ffda4d;
+}
+
+.section-divider span {
+  height: 1px;
+  flex: 1;
+  border-top: 2px dashed rgba(255,231,148,.8);
+}
+
+.section-divider b {
+  font-size: 24px;
+  font-weight: 400;
+  transform: rotate(12deg);
+}
+
+.divider-long {
+  margin-top: 38px;
+  margin-bottom: 42px;
+}
+
+/* Kertas sobek untuk panel pendidikan dan organisasi */
+
+.content-grid,
+.projects-section,
+.skills-section,
+.contact-section {
+  width: min(1120px, calc(100% - 44px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.paper-panel {
+  position: relative;
+  min-width: 0;
+  padding: 34px 32px 30px;
+  background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 12px 10px rgba(0,0,0,.16));
+}
+
+.organization-panel {
+  background-color: #f9df70;
+  background-image: url("assets/kertas-kuning.png");
+  background-size: 100% 100%;
+  transform: rotate(-.5deg);
+  padding: 40px 35px 32px;
+}
+
+.education-panel {
+  transform: rotate(.5deg);
+}
+
+.panel-pin {
+  position: absolute;
+  z-index: 5;
+  top: -16px;
+  left: 22px;
+  width: 32px;
+  height: 48px;
+  object-fit: contain;
+  transform: rotate(-17deg);
+  filter: drop-shadow(1px 3px 2px #0003);
+}
+
+.section-heading {
+  position: relative;
+  margin: 0 0 23px;
+}
+
+.section-heading h2 {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font: 29px/1.1 var(--display);
+  color: var(--green-dark);
+  letter-spacing: -.8px;
+}
+
+.section-heading h2::after {
+  content: "";
+  height: 11px;
+  background: var(--yellow);
+  position: absolute;
+  left: -5px;
+  right: -10px;
+  bottom: -2px;
+  z-index: -1;
+  transform: rotate(-1.5deg);
+  border-radius: 4px;
+}
+
+.section-kicker {
+  font-size: 17px;
+  margin: 0 0 4px;
+}
+
+.heading-underline {
+  display: block;
+  width: 94px;
+  border-bottom: 3px solid var(--red);
+  transform: rotate(-2deg);
+  margin-top: 13px;
+}
+
+.heading-doodle {
+  position: absolute;
+  top: -15px;
+  right: 0;
+  color: var(--green);
+  font: 50px/1 var(--hand);
+  transform: rotate(12deg);
+}
+
+.cap-doodle {
+  font-size: 44px;
+  top: -7px;
+}
+
+.experience-list,
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.experience-list::before,
+.education-list::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  bottom: 16px;
+  border-left: 2px dashed rgba(6,74,34,.56);
+}
+
+.experience-list li {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding: 0 0 13px;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  flex: 0 0 18px;
+  height: 18px;
+  margin-top: 3px;
+  border: 4px solid var(--green);
+  border-radius: 50%;
+  background: var(--yellow);
+  z-index: 1;
+}
+
+.experience-list strong {
+  display: block;
+  color: #153d28;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.experience-list p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #535445;
+}
+
+.experience-list p b {
+  color: var(--navy);
+}
+
+.panel-footnote {
+  border-top: 1px dashed rgba(11,122,48,.5);
+  padding-top: 12px;
+  margin: 6px 0 0;
+  font: 700 18px/1.2 var(--hand);
+  color: var(--green-dark);
+}
+
+.education-list::before {
+  left: 65px;
+}
+
+.education-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px minmax(0,1fr);
+  gap: 10px;
+  padding: 0 0 21px;
+  align-items: start;
+}
+
+.edu-year {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px 8px;
+  border-radius: 20px;
+  color: #fff8df;
+  background: var(--navy);
+  box-shadow: 2px 2px 0 rgba(27,45,154,.2);
+  font-size: 9px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.education-list strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #213d2b;
+}
+
+.education-list p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.current-education .edu-year {
+  background: var(--green);
+}
+
+.now-tag {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 8px;
+  border: 1px dashed var(--green);
+  border-radius: 4px;
+  color: var(--green-dark);
+  background: rgba(255,255,255,.5);
+  font: 700 14px/1.1 var(--hand);
+}
+
+.campus-note {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  margin: 2px 0 0;
+  color: #78551e;
+  font: 700 18px/1.1 var(--hand);
+}
+
+.campus-note span {
+  color: var(--red);
+}
+
+/* Kartu proyek memakai kertas sobek dan preview landscape. */
+
+.projects-section {
+  scroll-margin-top: 110px;
+}
+
+.centered-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 25px;
+}
+
+.centered-heading .section-kicker {
+  color: #ffe28a;
+  font-size: 22px;
+}
+
+.centered-heading h2 {
+  color: var(--cream);
+  font: 34px/1.15 var(--display);
+  text-shadow: 3px 4px 0 rgba(0,0,0,.25);
+}
+
+.centered-heading h2::after {
+  left: 10%;
+  right: 10%;
+  bottom: -7px;
+  opacity: .9;
+}
+
+.section-intro {
+  margin: 16px auto 0;
+  max-width: 620px;
+  color: #f7f0d5;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 24px;
+}
+
+.project-card {
+  padding: 28px 26px 25px;
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,.17));
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.project-card:nth-child(odd) {
+  transform: rotate(-.5deg);
+}
+
+.project-card:nth-child(even) {
+  transform: rotate(.5deg);
+}
+
+.project-card:hover {
+  transform: translateY(-5px) rotate(0);
+  filter: drop-shadow(0 15px 10px rgba(0,0,0,.2));
+}
+
+.project-index {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: 13px;
+  color: var(--red);
+  font: 700 17px/1 var(--hand);
+  letter-spacing: .3px;
+}
+
+.project-visual {
+  height: 190px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 18px;
+  border: 5px solid #fffdf3;
+  box-shadow: 3px 5px 0 rgba(18,47,29,.2);
+  background-color: #e9e2cf;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.project-tag {
+  display: inline-block;
+  color: var(--green);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.project-copy h3 {
+  margin: 5px 0 8px;
+  color: var(--navy);
+  font: 25px/1.1 var(--hand);
+  font-weight: 700;
+}
+
+.project-copy p {
+  font-size: 11px;
+  line-height: 1.85;
+  margin: 0 0 13px;
+  color: #4c554c;
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 14px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--yellow);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+  background-color: #f6b800;
+  border-color: #064a22;
+}
+
+.text-link span {
+  font-size: 15px;
+}
+
+/* Keahlian: logo teknologi diberi ruang sendiri, bukan sekadar teks */
+
+.skills-section {
+  scroll-margin-top: 110px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 15px;
+}
+
+.skill-tile {
+  position: relative;
+  min-width: 0;
+  padding: 22px 17px 19px;
+  text-align: center;
+  background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 7px rgba(0,0,0,.14));
+  transition: transform .2s ease;
+}
+
+.skill-tile:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.skill-tile:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.skill-tile:hover {
+  transform: translateY(-5px) rotate(0);
+}
+
+.skill-logo {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 11px;
+  padding: 9px;
+  background: #fffdf4;
+  border: 1px solid rgba(11,122,48,.17);
+  border-radius: 13px;
+  box-shadow: 2px 3px 0 rgba(11,122,48,.16);
+}
+
+.skill-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-tile h3 {
+  margin: 0 0 6px;
+  color: var(--green-dark);
+  font: 700 23px/1.05 var(--hand);
+}
+
+.skill-tile p {
+  min-height: 47px;
+  margin: 0;
+  color: #5d655c;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.skill-track {
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  margin: 12px 0 5px;
+  border-radius: 99px;
+  background: #d9d4c5;
+  border: 1px solid rgba(36,51,43,.2);
+}
+
+.skill-track span {
+  display: block;
+  width: var(--level);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,var(--green),#44a964);
+}
+
+.skill-level {
+  color: var(--navy);
+  font-size: 10px;
+}
+
+.tool-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.tool-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px dashed rgba(255,230,149,.7);
+  border-radius: 999px;
+  color: #fff3c9;
+  background: rgba(3,59,26,.35);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.tool-strip img {
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Kontak */
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr .94fr;
+  gap: 38px;
+  align-items: center;
+  padding-bottom: 16px;
+  scroll-margin-top: 110px;
+}
+
+.contact-copy {
+  padding: 20px 0 20px 12px;
+  color: var(--cream);
+}
+
+.contact-copy .section-kicker {
+  color: #ffdf69;
+  font-size: 22px;
+}
+
+.contact-copy h2 {
+  margin: 4px 0 12px;
+  font: 40px/1.08 var(--display);
+  color: var(--cream);
+  text-shadow: 3px 4px 0 rgba(0,0,0,.25);
+}
+
+.contact-copy h2 span {
+  color: var(--yellow);
+}
+
+.contact-copy > p:not(.section-kicker) {
+  max-width: 485px;
+  color: #f4efd9;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.contact-lines {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 22px;
+}
+
+.contact-lines > a,
+.contact-lines > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff9e9;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.contact-lines small {
+  display: block;
+  color: #ffdf69;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.contact-icon {
+  width: 37px;
+  height: 37px;
+  flex: 0 0 37px;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+}
+
+.contact-icon img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 41px;
+  height: 41px;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border-radius: 9px;
+  background: #fff9eb;
+  box-shadow: 3px 4px 0 rgba(0,0,0,.18);
+  transition: transform .2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px) rotate(-4deg);
+}
+
+.social-links img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.social-links > span {
+  margin-left: 2px;
+  color: #ffdf69;
+  font: 700 18px var(--hand);
+}
+
+.contact-form {
+  padding: 36px 35px 30px;
+  transform: rotate(.6deg);
+}
+
+.form-kicker {
+  margin-bottom: 2px;
+  color: var(--red);
+}
+
+.contact-form h3 {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font: 30px/1.05 var(--display);
+}
+
+.contact-form label {
+  display: block;
+  margin: 12px 0 5px;
+  color: #344338;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #bcb6a6;
+  border-radius: 5px;
+  padding: 11px 12px;
+  color: var(--ink);
+  background: rgba(255,255,255,.62);
+  font-size: 11px;
+  transition: border .2s ease, box-shadow .2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9a9b8f;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(11,122,48,.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-button {
+  margin-top: 16px;
+  width: 100%;
+  border: 1px solid rgba(28,49,36,.85);
+}
+
+.form-note {
+  margin: 12px 0 0;
+  color: #77776b;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* Footer dan ilustrasi kecil */
+
+.site-footer {
+  position: relative;
+  margin-top: 40px;
+  padding: 37px 24px 25px;
+  text-align: center;
+  color: #fff2c7;
+  background: rgba(4,54,24,.76);
+  border-top: 2px dashed rgba(255,229,133,.65);
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font: 700 27px/1 var(--hand);
+  color: #fff6d8;
+}
+
+.footer-brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff5d8;
+}
+
+.site-footer p {
+  margin: 8px 0 15px;
+  font: 18px var(--hand);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+}
+
+.footer-nav a {
+  color: #ffe18a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.footer-nav a:hover {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-footer small {
+  color: rgba(255,242,199,.72);
+  font-size: 9px;
+}
+
+.footer-totoro {
+  position: absolute;
+  right: max(25px, calc((100vw - 1100px) / 2));
+  bottom: 18px;
+  width: 68px;
+  max-height: 83px;
+  object-fit: contain;
+  opacity: .92;
+  filter: drop-shadow(1px 3px 3px #0002);
+}
+
+.footer-susuwatari {
+  position: absolute;
+  left: max(25px, calc((100vw - 1100px) / 2));
+  right: auto;
+  bottom: 18px;
+  width: 68px;
+  max-height: 83px;
+  object-fit: contain;
+  opacity: .92;
+  filter: drop-shadow(1px 3px 3px #0002);
+}
+
+/* Animasi sederhana, tetap ramah untuk perangkat yang mengurangi animasi */
+
+@keyframes float-note {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(-1deg);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-copy,
+.portrait-side {
+  animation: pop-in .75s ease both;
+}
+
+.portrait-side {
+  animation-delay: .08s;
+}
+
+@media (min-width: 1250px) {
+  .opening-area {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .top-peripherals {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-wrap {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .brand-name {
+    font-size: 26px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .top-peripherals {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .intro-layout {
+    min-height: 0;
+    height: 100%;
+    padding: 10% 9% 9%;
+    gap: 3%;
+  }
+
+  .intro-copy h1 {
+    font-size: 37px;
+  }
+
+  .intro-copy h1 span {
+    font-size: 31px;
+  }
+
+  .intro-description {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .profile-facts span {
+    font-size: 13px;
+  }
+
+  .two-column {
+    gap: 20px;
+  }
+
+  .paper-panel {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .organization-panel {
+    padding: 36px 25px 28px;
+  }
+
+  .education-list li {
+    grid-template-columns: 103px minmax(0,1fr);
+  }
+
+  .education-list::before {
+    left: 55px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .site-header {
+    padding: 5px 10px 0;
+  }
+
+  .nav-wrap {
+    min-height: 62px;
+    padding: 8px 15px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 25px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 5px;
+    right: 5px;
+    padding: 16px;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 7px;
+    background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+    box-shadow: 0 11px 16px rgba(0,0,0,.2);
+    border-radius: 5px;
+  }
+
+  .nav-links.is-open {
+    display: grid;
+  }
+
+  .nav-link {
+    padding: 10px 8px;
+    border-bottom: 1px dashed rgba(11,122,48,.25);
+    font-size: 11px;
+  }
+
+  .nav-link::after {
+    bottom: 2px;
+    left: 8px;
+  }
+
+  .opening-area {
+    padding: 10px 12px 0;
+  }
+
+  .top-peripherals {
+    min-height: auto;
+    padding: 15px 10px 10px;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .envelope-widget {
+    width: 48%;
+    margin-top: 0;
+  }
+
+  .envelope-caption {
+    padding-right: 0;
+    font-size: 16px;
+  }
+
+  .envelope-scene {
+    height: 154px;
+  }
+
+  .tap-hint {
+    margin-top: -6px;
+    font-size: 13px;
+  }
+
+  .letter-message strong {
+    font-size: 13px;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 10px;
+  }
+
+  .intro-book {
+    margin-top: 3px;
+  }
+
+  .book-art {
+    display: none;
+  }
+
+  .intro-book {
+    aspect-ratio: auto;
+  }
+
+  .intro-layout {
+    min-height: 0;
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 32px 28px;
+    background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+    filter: drop-shadow(0 9px 10px rgba(0,0,0,.15));
+  }
+
+  .portrait-paper {
+    width: min(64%, 250px);
+  }
+
+  .photo-caption {
+    font-size: 17px;
+  }
+
+  .intro-copy {
+    text-align: left;
+  }
+
+  .eyebrow {
+    font-size: 18px;
+  }
+
+  .intro-copy h1 {
+    font-size: clamp(32px, 9vw, 45px);
+  }
+
+  .intro-copy h1 span {
+    font-size: clamp(27px, 7.2vw, 37px);
+  }
+
+  .intro-role {
+    font-size: 9px;
+  }
+
+  .intro-description {
+    max-width: none;
+    font-size: 12px;
+  }
+
+  .profile-facts {
+    gap: 6px;
+  }
+
+  .profile-facts span {
+    font-size: 14px;
+  }
+
+  .section-divider {
+    width: 82%;
+    margin: 24px auto 30px;
+  }
+
+  .content-grid,
+  .projects-section,
+  .skills-section,
+  .contact-section {
+    width: calc(100% - 28px);
+  }
+
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .paper-panel {
+    padding: 36px 27px 28px;
+  }
+
+  .organization-panel {
+    padding: 39px 27px 29px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .experience-list strong {
+    font-size: 12px;
+  }
+
+  .experience-list p {
+    font-size: 11px;
+  }
+
+  .education-list li {
+    grid-template-columns: 120px minmax(0,1fr);
+  }
+
+  .education-list::before {
+    left: 64px;
+  }
+
+  .centered-heading h2 {
+    font-size: 29px;
+  }
+
+  .centered-heading .section-kicker {
+    font-size: 19px;
+  }
+
+  .section-intro {
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 25px 24px 24px;
+  }
+
+  .project-visual {
+    height: 180px;
+  }
+
+  .project-copy p {
+    font-size: 12px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 13px;
+  }
+
+  .skill-tile {
+    padding: 20px 12px 17px;
+  }
+
+  .skill-tile h3 {
+    font-size: 21px;
+  }
+
+  .skill-tile p {
+    min-height: 56px;
+    font-size: 9px;
+  }
+
+  .skill-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .tool-strip {
+    gap: 7px;
+  }
+
+  .tool-strip span {
+    padding: 6px 9px;
+    font-size: 9px;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-copy {
+    padding: 10px 8px;
+  }
+
+  .contact-copy h2 {
+    font-size: 34px;
+  }
+
+  .contact-copy > p:not(.section-kicker) {
+    font-size: 12px;
+  }
+
+  .contact-form {
+    padding: 32px 26px 27px;
+  }
+
+  .footer-totoro {
+    position: static;
+    width: 52px;
+    max-height: 58px;
+    margin: 0 auto 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .top-peripherals {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .envelope-caption {
+    font-size: 14px;
+  }
+
+  .envelope-scene {
+    height: 135px;
+  }
+
+  .tap-hint {
+    font-size: 12px;
+  }
+
+  .intro-layout {
+    padding: 29px 21px;
+  }
+
+  .education-list li {
+    grid-template-columns: 102px minmax(0,1fr);
+    gap: 8px;
+  }
+
+  .education-list::before {
+    left: 53px;
+  }
+
+  .edu-year {
+    font-size: 8px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-tile h3 {
+    font-size: 19px;
+  }
+
+  .project-visual {
+    height: 155px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* ===== Penyesuaian layout dan proporsi aset ===== */
+
+.site-header {
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px clamp(14px, 3vw, 38px) 0;
+  background: transparent;
+  backdrop-filter: none;
+  transition: padding .28s ease;
+}
+
+.nav-wrap {
+  width: 100%;
+  max-width: 1240px;
+  min-height: 68px;
+  padding: 10px 24px;
+  gap: clamp(12px, 2vw, 28px);
+  background: rgba(244, 241, 235, .97);
+  border: 1px solid rgba(11, 74, 34, .18);
+  border-radius: 16px 22px 15px 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.9);
+  filter: none;
+  transition: width .3s ease, max-width .3s ease, min-height .3s ease, padding .3s ease, border-radius .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+.brand-mark {
+  background: #fffdf4;
+  box-shadow: 2px 3px 0 rgba(11,122,48,.13);
+}
+
+.brand-name {
+  font-size: 30px;
+}
+
+.nav-links {
+  gap: clamp(9px, 1.45vw, 21px);
+}
+
+.nav-link {
+  font-size: 12px;
+  padding: 8px 1px;
+}
+
+.nav-link::after {
+  height: 3px;
+}
+
+.site-header.is-scrolled .nav-wrap {
+  width: min(100%, 990px);
+  max-width: 990px;
+  min-height: 58px;
+  padding: 7px 20px;
+  border-radius: 999px;
+  background: rgba(248, 246, 239, .94);
+  border-color: rgba(11, 122, 48, .2);
+  box-shadow: 0 12px 32px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter: blur(18px) saturate(1.15);
+}
+
+.site-header.is-scrolled .brand-mark {
+  width: 37px;
+  height: 37px;
+}
+
+.site-header.is-scrolled .brand-name {
+  font-size: 25px;
+}
+
+.site-header.is-scrolled .nav-link {
+  font-size: 11px;
+}
+
+/* Area pembuka dirapikan supaya elemen dekoratif tidak berebut ruang. */
+
+.opening-area {
+  max-width: 1260px;
+  padding-top: 7px;
+}
+
+.top-peripherals {
+  min-height: 226px;
+  padding-top: 13px;
+  gap: 20px;
+}
+
+.envelope-caption {
+  font-size: 22px;
+}
+
+.envelope-widget {
+  width: min(360px, 38%);
+  margin-top: -8px;
+}
+
+.envelope-scene {
+  height: 238px;
+  overflow: visible;
+}
+
+.letter-paper {
+  width: 48%;
+  height: auto;
+  left: 26%;
+  top: -10%;
+  transform: translateY(39%);
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 5px 4px rgba(0,0,0,.14));
+}
+
+.letter-message {
+  width: 37%;
+  left: 31.5%;
+  top: 9%;
+  gap: 5px;
+  opacity: 0;
+  transform: translateY(24px);
+  text-shadow: 0 1px rgba(255,255,255,.3);
+}
+
+.letter-message strong {
+  font-size: 19px;
+}
+
+.letter-message span,
+.letter-message em {
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.envelope-widget.is-open .letter-paper {
+  transform: translateY(-17%);
+}
+
+.envelope-widget.is-open .letter-message {
+  transform: translateY(-14px);
+  opacity: 1;
+}
+
+.tap-hint {
+  margin-top: -5px;
+}
+
+/* Buku mengikuti proporsi gambar yang sudah dicrop, bukan ukuran kanvas kosongnya. */
+
+.intro-book {
+  max-width: 1190px;
+  aspect-ratio: 578 / 373;
+  margin-top: -2px;
+}
+
+.book-art {
+  object-fit: fill;
+}
+
+.intro-layout {
+  grid-template-columns: .9fr 1.1fr;
+  gap: 5%;
+  padding: 9.5% 8.5% 8.3%;
+}
+
+.portrait-paper {
+  width: min(100%, 315px);
+}
+
+.lined-paper {
+  object-fit: fill;
+}
+
+.portrait-photo {
+  width: 70%;
+  height: 61%;
+  left: 15%;
+  top: 14%;
+  border-width: 5px;
+}
+
+.photo-pin {
+  width: 39px;
+  height: 47px;
+  right: 10%;
+  top: -2%;
+}
+
+.photo-caption {
+  margin-top: 3px;
+  font-size: 20px;
+}
+
+.eyebrow {
+  font-size: 21px;
+}
+
+.intro-copy h1 {
+  font-size: clamp(37px, 4vw, 53px);
+  line-height: .99;
+  letter-spacing: -1.8px;
+}
+
+.intro-copy h1 span {
+  font-size: clamp(29px, 3.1vw, 41px);
+  line-height: 1.02;
+}
+
+.intro-role {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .055em;
+}
+
+.intro-description {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.profile-facts span {
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+.sticker-button {
+  font-size: 19px;
+  padding: 11px 19px;
+}
+
+/* Bagian-bagian dibuat punya napas dan ukuran teks yang lebih nyaman dibaca. */
+
+.section-divider {
+  margin-top: 32px;
+  margin-bottom: 42px;
+}
+
+.content-grid,
+.projects-section,
+.skills-section,
+.contact-section {
+  width: min(1120px, calc(100% - 48px));
+}
+
+.two-column {
+  gap: 30px;
+}
+
+.paper-panel {
+  padding: 40px 36px 34px;
+}
+
+.organization-panel {
+  background-color: #f9df70;
+  background-image: url("assets/kertas-kuning.png");
+  background-size: 100% 100%;
+  padding: 43px 36px 34px;
+}
+
+.education-panel {
+  padding-left: 34px;
+  padding-right: 34px;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  font-size: clamp(25px, 2.2vw, 31px);
+}
+
+.section-kicker {
+  font-size: 18px;
+}
+
+.experience-list li {
+  gap: 13px;
+  padding-bottom: 15px;
+}
+
+.timeline-dot {
+  flex-basis: 19px;
+  height: 19px;
+}
+
+.experience-list strong {
+  font-size: 13px;
+}
+
+.experience-list p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.panel-footnote {
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.education-list li {
+  grid-template-columns: 116px minmax(0,1fr);
+  gap: 11px;
+  padding-bottom: 23px;
+}
+
+.education-list::before {
+  left: 60px;
+}
+
+.edu-year {
+  font-size: 10px;
+  padding: 6px 9px;
+}
+
+.education-list strong {
+  font-size: 13px;
+}
+
+.education-list p {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.now-tag {
+  font-size: 15px;
+}
+
+.campus-note {
+  font-size: 19px;
+}
+
+/* Proyek dibuat lebih horizontal agar kartu dan kertas sobek tidak gepeng. */
+
+.projects-section,
+.skills-section {
+  scroll-margin-top: 100px;
+}
+
+.centered-heading {
+  margin-bottom: 30px;
+}
+
+.centered-heading h2 {
+  font-size: clamp(30px, 3vw, 39px);
+}
+
+.centered-heading .section-kicker {
+  font-size: 23px;
+}
+
+.section-intro {
+  font-size: 13px;
+}
+
+.projects-grid {
+  gap: 24px;
+}
+
+.project-card {
+  min-height: 295px;
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: 16px 22px;
+  padding: 42px 29px 27px;
+  background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+}
+
+.project-card:nth-child(odd):not(:hover) {
+  transform: rotate(-.25deg);
+}
+
+.project-card:nth-child(even):not(:hover) {
+  transform: rotate(.3deg);
+}
+
+.project-index {
+  position: absolute;
+  top: 17px;
+  left: 27px;
+  margin: 0;
+  font-size: 18px;
+}
+
+.project-visual {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  height: 164px;
+  margin: 9px 0 0;
+  border-width: 4px;
+}
+
+.project-copy {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  padding-top: 7px;
+}
+
+.project-tag {
+  font-size: 10px;
+  letter-spacing: .07em;
+}
+
+.project-copy h3 {
+  font-size: 26px;
+  margin: 7px 0 9px;
+  line-height: 1.05;
+}
+
+.project-copy p {
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.text-link {
+  font-size: 12px;
+}
+
+/* Keahlian lebih visual dan tidak terasa seperti tabel rapat. */
+
+.skills-grid {
+  gap: 17px;
+}
+
+.skill-tile {
+  padding: 23px 16px 20px;
+}
+
+.skill-logo {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 13px;
+  border-radius: 15px;
+}
+
+.skill-tile h3 {
+  font-size: 24px;
+}
+
+.skill-tile p {
+  min-height: 48px;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.skill-track {
+  height: 8px;
+}
+
+.skill-level {
+  font-size: 11px;
+}
+
+.tool-strip {
+  gap: 10px;
+}
+
+.tool-strip span {
+  font-size: 11px;
+  padding: 8px 13px;
+}
+
+.contact-section {
+  gap: 40px;
+}
+
+.contact-copy h2 {
+  font-size: clamp(35px, 3.4vw, 44px);
+}
+
+.contact-copy > p:not(.section-kicker) {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.contact-lines > a,
+.contact-lines > div {
+  font-size: 12px;
+}
+
+.contact-lines small {
+  font-size: 10px;
+}
+
+.contact-form {
+  padding: 39px 36px 32px;
+}
+
+.contact-form h3 {
+  font-size: 32px;
+}
+
+.contact-form label {
+  font-size: 11px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 12px;
+}
+
+.form-note {
+  font-size: 10px;
+}
+
+.site-footer {
+  margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .site-header.is-scrolled .nav-link {
+    font-size: 10px;
+  }
+
+  .top-peripherals {
+    min-height: 210px;
+  }
+
+  .envelope-widget {
+    width: 38%;
+  }
+
+  .intro-copy h1 {
+    font-size: 38px;
+  }
+
+  .intro-copy h1 span {
+    font-size: 30px;
+  }
+
+  .intro-description {
+    font-size: 11px;
+  }
+
+  .experience-list strong {
+    font-size: 12px;
+  }
+
+  .experience-list p {
+    font-size: 11px;
+  }
+
+  .education-list li {
+    grid-template-columns: 100px minmax(0,1fr);
+  }
+
+  .education-list::before {
+    left: 52px;
+  }
+
+  .project-card {
+    gap: 12px 15px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .project-visual {
+    height: 145px;
+  }
+
+  .project-copy h3 {
+    font-size: 23px;
+  }
+
+  .project-copy p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: 73px;
+    padding: 6px 10px 0;
+  }
+
+  .nav-wrap {
+    min-height: 58px;
+    padding: 7px 13px;
+    border-radius: 15px 18px 13px 18px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 25px;
+  }
+
+  .site-header.is-scrolled .nav-wrap {
+    width: calc(100% - 8px);
+    min-height: 54px;
+    padding: 6px 12px;
+  }
+
+  .site-header.is-scrolled .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .site-header.is-scrolled .brand-name {
+    font-size: 23px;
+  }
+
+  .menu-toggle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+    padding: 4px;
+  }
+
+  .menu-toggle span {
+    margin: 3px 0;
+    width: 20px;
+  }
+
+  .nav-links {
+    top: calc(100% + 8px);
+    left: 5px;
+    right: 5px;
+    padding: 16px;
+    border: 1px solid rgba(11,122,48,.14);
+    border-radius: 20px;
+    background: rgba(244,241,235,.98);
+    box-shadow: 0 14px 28px rgba(0,0,0,.22);
+    backdrop-filter: blur(14px);
+  }
+
+  .nav-links.is-open {
+    display: grid;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .site-header.is-scrolled .nav-link {
+    font-size: 11px;
+  }
+
+  .opening-area {
+    padding: 5px 12px 0;
+  }
+
+  .top-peripherals {
+    min-height: 0;
+    padding: 12px 4px 5px;
+    gap: 9px;
+  }
+
+  .envelope-widget {
+    width: 48%;
+    margin-top: 0;
+  }
+
+  .envelope-caption {
+    font-size: 15px;
+    padding-right: 0;
+  }
+
+  .envelope-scene {
+    height: 155px;
+  }
+
+  .letter-paper {
+    width: 52%;
+    left: 24%;
+    top: -5%;
+  }
+
+  .letter-message {
+    width: 42%;
+    left: 29%;
+    top: 8%;
+    gap: 2px;
+  }
+
+  .letter-message strong {
+    font-size: 12px;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 9px;
+  }
+
+  .tap-hint {
+    font-size: 12px;
+    margin-top: -4px;
+  }
+
+  .intro-book {
+    aspect-ratio: auto;
+    margin-top: 7px;
+  }
+
+  .book-art {
+    display: none;
+  }
+
+  .intro-layout {
+    min-height: 0;
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 31px 26px;
+    background: var(--cream) url("assets/kertas-sobek.png") center / 100% 100% no-repeat;
+    filter: drop-shadow(0 9px 10px rgba(0,0,0,.16));
+  }
+
+  .portrait-paper {
+    width: min(68%, 250px);
+  }
+
+  .photo-caption {
+    font-size: 17px;
+  }
+
+  .intro-copy h1 {
+    font-size: clamp(34px, 9vw, 47px);
+  }
+
+  .intro-copy h1 span {
+    font-size: clamp(27px, 7vw, 37px);
+  }
+
+  .intro-role {
+    font-size: 9px;
+  }
+
+  .intro-description {
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .profile-facts span {
+    font-size: 13px;
+  }
+
+  .sticker-button {
+    font-size: 18px;
+  }
+
+  .section-divider {
+    width: 82%;
+    margin: 28px auto 32px;
+  }
+
+  .content-grid,
+  .projects-section,
+  .skills-section,
+  .contact-section {
+    width: calc(100% - 28px);
+  }
+
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .paper-panel {
+    padding: 37px 27px 28px;
+  }
+
+  .organization-panel {
+    padding: 39px 28px 29px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .experience-list strong {
+    font-size: 13px;
+  }
+
+  .experience-list p {
+    font-size: 12px;
+  }
+
+  .education-list li {
+    grid-template-columns: 118px minmax(0,1fr);
+  }
+
+  .education-list::before {
+    left: 62px;
+  }
+
+  .edu-year {
+    font-size: 9px;
+  }
+
+  .education-list strong {
+    font-size: 12px;
+  }
+
+  .education-list p {
+    font-size: 11px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+    min-height: 240px;
+    padding: 39px 20px 24px;
+    gap: 10px 14px;
+  }
+
+  .project-index {
+    top: 14px;
+    left: 21px;
+    font-size: 16px;
+  }
+
+  .project-visual {
+    height: 135px;
+    margin-top: 0;
+    border-width: 3px;
+  }
+
+  .project-copy {
+    padding-top: 0;
+  }
+
+  .project-copy h3 {
+    font-size: 23px;
+  }
+
+  .project-copy p {
+    font-size: 10px;
+    line-height: 1.65;
+  }
+
+  .text-link {
+    font-size: 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 13px;
+  }
+
+  .skill-tile {
+    padding: 20px 11px 16px;
+  }
+
+  .skill-logo {
+    width: 50px;
+    height: 50px;
+    padding: 7px;
+  }
+
+  .skill-tile h3 {
+    font-size: 21px;
+  }
+
+  .skill-tile p {
+    min-height: 50px;
+    font-size: 9px;
+  }
+
+  .tool-strip {
+    gap: 7px;
+  }
+
+  .tool-strip span {
+    padding: 6px 9px;
+    font-size: 9px;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .contact-copy {
+    padding: 10px 8px;
+  }
+
+  .contact-copy h2 {
+    font-size: 35px;
+  }
+
+  .contact-form {
+    padding: 32px 26px 27px;
+  }
+
+  .footer-totoro {
+    position: static;
+    width: 52px;
+    max-height: 58px;
+    margin: 0 auto 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    height: 68px;
+  }
+
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .site-header.is-scrolled .brand-name {
+    font-size: 21px;
+  }
+
+  .top-peripherals {
+    align-items: flex-start;
+  }
+
+  .envelope-caption {
+    font-size: 13px;
+  }
+
+  .envelope-scene {
+    height: 136px;
+  }
+
+  .tap-hint {
+    font-size: 11px;
+  }
+
+  .letter-message strong {
+    font-size: 10px;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 8px;
+  }
+
+  .intro-layout {
+    padding: 28px 21px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+  .experience-list strong {
+    font-size: 12px;
+  }
+
+  .experience-list p {
+    font-size: 11px;
+  }
+
+  .education-list li {
+    grid-template-columns: 103px minmax(0,1fr);
+    gap: 8px;
+  }
+
+  .education-list::before {
+    left: 54px;
+  }
+
+  .edu-year {
+    font-size: 8px;
+    padding: 5px 6px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 13px;
+    padding: 39px 24px 24px;
+  }
+
+  .project-visual {
+    grid-column: 1;
+    grid-row: 1;
+    height: 170px;
+    margin: 0;
+  }
+
+  .project-copy {
+    grid-column: 1;
+    grid-row: 2;
+    padding-top: 0;
+  }
+
+  .project-copy h3 {
+    font-size: 25px;
+  }
+
+  .project-copy p {
+    font-size: 11px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-tile h3 {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-wrap,
+  .site-header,
+  .project-card,
+  .skill-tile {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ===== Penyempurnaan tampilan scrapbook ===== */
+
+/* Kertas menggunakan siluet PNG saja; jangan tambahkan kotak solid di belakangnya. */
+
+.paper-panel,
+.organization-panel,
+.education-panel,
+.project-card,
+.contact-form {
+  background-color: transparent !important;
+}
+
+.paper-panel {
+  background-image: url("assets/kertas-sobek.png") !important;
+  background-size: 100% 100% !important;
+}
+
+.organization-panel {
+  background-image: url("assets/kertas-kuning.png") !important;
+  background-size: 100% 100% !important;
+}
+
+.education-panel {
+  background-image: url("assets/kertas-sobek.png") !important;
+}
+
+.project-card {
+  background-image: url("assets/kertas-sobek.png") !important;
+  background-size: 100% 100% !important;
+}
+
+.contact-form {
+  background-image: url("assets/kertas-sobek.png") !important;
+}
+
+/* Area pembuka mengatur judul, pemutar lagu, dan amplop. */
+
+.top-peripherals {
+  display: grid !important;
+  grid-template-columns: minmax(190px, 250px) minmax(260px, 1fr) minmax(205px, 255px);
+  align-items: center !important;
+  gap: clamp(16px, 2.4vw, 34px) !important;
+  min-height: 230px !important;
+  padding: 12px 24px 8px !important;
+  overflow: visible;
+}
+
+.portfolio-banner {
+  min-width: 0;
+  text-align: center;
+  align-self: center;
+  padding: 5px 0 14px;
+  transform: rotate(-1.5deg);
+  color: var(--yellow-soft);
+  position: relative;
+}
+
+.portfolio-banner p {
+  margin: 0;
+  font: clamp(32px, 4.1vw, 60px)/.98 var(--display);
+  letter-spacing: clamp(-2px, -.13vw, -1px);
+  color: var(--yellow-soft);
+  text-shadow: 3px 4px 0 rgba(0,0,0,.19), 0 1px rgba(255,255,255,.1);
+  white-space: nowrap;
+}
+
+/* Amplop: surat berada di antara lapisan belakang dan lipatan depan. */
+
+.envelope-widget {
+  width: 100% !important;
+  max-width: 255px;
+  min-width: 0;
+  margin: 0 !important;
+  justify-self: end;
+  z-index: 2;
+}
+
+.envelope-caption {
+  padding: 0 !important;
+  margin: 0 0 2px !important;
+  text-align: center !important;
+  font-size: clamp(13px, 1.3vw, 18px) !important;
+}
+
+.envelope-scene {
+  display: block;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 355 / 368;
+  overflow: visible !important;
+}
+
+.envelope-trigger {
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.envelope-back,
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.envelope-back {
+  z-index: 1;
+}
+
+.letter-insert {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  left: 24%;
+  top: 6%;
+  width: 52%;
+  aspect-ratio: 387 / 529;
+  transform: translateY(36%);
+  transform-origin: 50% 90%;
+  transition: transform .58s cubic-bezier(.2,.75,.25,1);
+  pointer-events: none;
+}
+
+.letter-paper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transform: none !important;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.12));
+}
+
+.letter-message {
+  position: absolute;
+  top: 19%;
+  left: 16%;
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(9px);
+  transition: opacity .22s ease, transform .35s ease;
+  color: var(--navy);
+  font: 700 clamp(9px, .9vw, 12px)/1.15 var(--hand);
+  text-align: left;
+  text-shadow: 0 1px rgba(255,255,255,.35);
+}
+
+.letter-message strong {
+  font-size: clamp(12px, 1.2vw, 16px) !important;
+}
+
+.letter-message span,
+.letter-message em {
+  font-size: clamp(9px, .85vw, 11px) !important;
+  line-height: 1.2 !important;
+}
+
+.letter-message em {
+  color: var(--green-dark);
+  font-style: normal;
+  margin-top: 2px;
+}
+
+.envelope-front {
+  z-index: 4;
+  clip-path: inset(38% 0 0 0);
+  -webkit-clip-path: inset(38% 0 0 0);
+  filter: drop-shadow(0 6px 5px rgba(0,0,0,.13));
+}
+
+.envelope-widget.is-open .letter-insert {
+  transform: translateY(-18%);
+}
+
+.envelope-widget.is-open .letter-message {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .12s;
+}
+
+.tap-hint {
+  margin: -1px 0 0 !important;
+  font-size: clamp(12px, 1.05vw, 15px) !important;
+  line-height: 1.15;
+}
+
+/* Buku tetap jadi satu bidang utama; pin di pojok buku sengaja dihilangkan. */
+
+.intro-layout {
+  background-color: transparent !important;
+}
+
+/* Semua preview proyek, termasuk kartu konsep, mempunyai rasio landscape 16:9. */
+
+.project-visual {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  min-height: 0 !important;
+  overflow: hidden;
+  border: 3px solid rgba(255,252,239,.9) !important;
+  box-shadow: 0 4px 0 rgba(16,56,31,.16) !important;
+}
+
+.project-visual > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Spacing responsif agar aset tidak saling menindih di ukuran menengah. */
+
+@media (max-width: 1000px) {
+  .top-peripherals {
+    grid-template-columns: minmax(150px, 205px) minmax(180px, 1fr) minmax(165px, 205px);
+    gap: 12px !important;
+    padding-inline: 12px !important;
+  }
+
+  .portfolio-banner p {
+    font-size: clamp(27px, 4.5vw, 43px);
+  }
+
+  .envelope-widget {
+    max-width: 205px;
+  }
+
+  .project-card {
+    grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .top-peripherals {
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    grid-template-areas: "title title" "social envelope";
+    align-items: start !important;
+    gap: 11px 14px !important;
+    min-height: 0 !important;
+    padding: 13px 4px 12px !important;
+  }
+
+  .portfolio-banner {
+    grid-area: title;
+    padding: 4px 0 8px;
+  }
+
+  .portfolio-banner p {
+    font-size: clamp(29px, 8.5vw, 42px);
+  }
+
+  .envelope-widget {
+    grid-area: envelope;
+    max-width: 180px;
+    width: 100% !important;
+    justify-self: center;
+  }
+
+  .envelope-caption {
+    font-size: 13px !important;
+  }
+
+  .tap-hint {
+    font-size: 11px !important;
+  }
+
+  .letter-message {
+    gap: 2px;
+    font-size: 9px;
+  }
+
+  .letter-message strong {
+    font-size: 11px !important;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 8px !important;
+  }
+
+  .intro-layout {
+    background-color: transparent !important;
+    background-image: url("assets/kertas-sobek.png") !important;
+  }
+
+  .project-card {
+    grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+  }
+
+  .project-visual {
+    grid-column: 1;
+    grid-row: 1;
+    height: auto !important;
+  }
+
+  .project-copy {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-peripherals {
+    gap: 8px 10px !important;
+  }
+
+  .portfolio-banner p {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  .envelope-widget {
+    max-width: 150px;
+  }
+
+  .envelope-scene {
+    width: 100%;
+  }
+
+  .letter-message {
+    top: 18%;
+  }
+
+  .letter-message strong {
+    font-size: 10px !important;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 7px !important;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .project-copy {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+}
+
+/* ===== Penyesuaian judul dan area pembuka ===== */
+
+.top-peripherals {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 282px) !important;
+  grid-template-areas: "title envelope" !important;
+  align-items: center !important;
+  gap: clamp(18px, 3vw, 42px) !important;
+  min-height: 300px !important;
+  padding: 18px clamp(20px, 3vw, 42px) 20px !important;
+}
+
+/* Kartu sosial tidak dipakai lagi pada area pembuka; tautannya tetap ada di Kontak. */
+
+/* Area ini disiapkan agar teks bisa diganti gambar PNG transparan dari Canva. */
+
+.portfolio-banner {
+  grid-area: title !important;
+  justify-self: stretch !important;
+  align-self: center !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 8px 0 14px clamp(4px, 2.4vw, 32px) !important;
+  text-align: left !important;
+  transform: rotate(-1deg) !important;
+}
+
+.portfolio-banner p {
+  margin: 0 !important;
+  font: clamp(52px, 7.15vw, 98px)/.96 var(--display) !important;
+  letter-spacing: clamp(-3px, -.2vw, -1px) !important;
+  color: var(--yellow-soft) !important;
+  text-shadow: 4px 5px 0 rgba(0,0,0,.22), 0 1px rgba(255,255,255,.12) !important;
+  white-space: nowrap !important;
+}
+
+.portfolio-title-image {
+  display: block;
+  width: min(100%, 760px);
+  max-height: 150px;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(3px 5px 0 rgba(0,0,0,.16));
+}
+
+/* Perbesar surat dan biarkan amplop menutupi ujung bawahnya. */
+
+.envelope-widget {
+  grid-area: envelope !important;
+  width: 100% !important;
+  max-width: 282px !important;
+  justify-self: end !important;
+  margin: 0 !important;
+  z-index: 2;
+}
+
+.envelope-caption {
+  margin: 0 0 5px !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: clamp(14px, 1.35vw, 18px) !important;
+}
+
+.envelope-caption span {
+  display: none !important;
+}
+
+.envelope-scene {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 355 / 368 !important;
+  overflow: visible !important;
+}
+
+.envelope-back,
+.envelope-front {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+}
+
+.envelope-back {
+  z-index: 1 !important;
+}
+
+.letter-insert {
+  left: 16% !important;
+  top: -1% !important;
+  width: 68% !important;
+  aspect-ratio: 398 / 516 !important;
+  z-index: 2 !important;
+  transform: translateY(33%) !important;
+  transform-origin: 50% 85% !important;
+  transition: transform .58s cubic-bezier(.2,.75,.25,1) !important;
+  overflow: visible !important;
+}
+
+.letter-paper {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.13)) !important;
+}
+
+.letter-message {
+  top: 19% !important;
+  left: 16% !important;
+  width: 68% !important;
+  gap: 3px !important;
+  font-size: clamp(10px, .92vw, 13px) !important;
+  line-height: 1.2 !important;
+  transform: translateY(30%) !important;
+  transition: opacity .22s ease, transform .35s ease !important;
+}
+
+.letter-message strong {
+  font-size: clamp(13px, 1.15vw, 16px) !important;
+}
+
+.letter-message span,
+.letter-message em {
+  font-size: clamp(10px, .9vw, 12px) !important;
+  line-height: 1.22 !important;
+}
+
+.envelope-front {
+  z-index: 4 !important;
+  clip-path: inset(38% 0 0 0) !important;
+  -webkit-clip-path: inset(38% 0 0 0) !important;
+}
+
+.envelope-widget.is-open .letter-insert {
+  transform: translateY(-7%) !important;
+}
+
+.envelope-widget.is-open .letter-message {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  transition-delay: .12s !important;
+}
+
+.tap-hint {
+  margin: 4px 0 0 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 1000px) {
+  .top-peripherals {
+    grid-template-columns: minmax(0,1fr) minmax(200px,245px) !important;
+    min-height: 280px !important;
+    gap: 18px !important;
+    padding-inline: 18px !important;
+  }
+
+  .portfolio-banner p {
+    font-size: clamp(45px, 6.3vw, 70px) !important;
+  }
+
+  .envelope-widget {
+    max-width: 245px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .top-peripherals {
+    grid-template-columns: minmax(0,1fr) !important;
+    grid-template-areas: "title" "envelope" !important;
+    min-height: 0 !important;
+    gap: 8px !important;
+    padding: 15px 12px 12px !important;
+  }
+
+  .portfolio-banner {
+    width: 100%;
+    padding: 8px 0 7px !important;
+    text-align: center !important;
+    transform: rotate(-.7deg) !important;
+  }
+
+  .portfolio-banner p {
+    font-size: clamp(42px, 10.5vw, 68px) !important;
+    white-space: nowrap !important;
+  }
+
+  .portfolio-title-image {
+    width: min(100%, 520px);
+    max-height: 100px;
+    margin-inline: auto;
+    object-position: center;
+  }
+
+  .envelope-widget {
+    width: min(66vw, 220px) !important;
+    max-width: 220px !important;
+    justify-self: center !important;
+  }
+
+  .envelope-caption {
+    font-size: 14px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .letter-message {
+    font-size: 10px !important;
+  }
+
+  .letter-message strong {
+    font-size: 13px !important;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .portfolio-banner p {
+    font-size: clamp(35px, 10vw, 43px) !important;
+  }
+
+  .envelope-widget {
+    width: min(68vw, 200px) !important;
+  }
+}
+
+/* ===== Penataan amplop dan preview proyek ===== */
+
+.portfolio-banner {
+  grid-area: title !important;
+  align-self: center !important;
+  justify-self: stretch !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 8px 0 12px clamp(0px, 1.3vw, 18px) !important;
+  text-align: left !important;
+  transform: none !important;
+}
+
+.portfolio-title-image {
+  display: block !important;
+  width: 100% !important;
+  max-width: 860px !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  filter: drop-shadow(2px 4px 0 rgba(0,0,0,.12));
+}
+
+/* Hilangkan gaya teks lama karena seluruh tiga baris sekarang ada di gambar transparan. */
+
+/* Batas scene mencegah ujung surat keluar dari bagian bawah amplop. */
+
+.envelope-widget {
+  max-width: 282px !important;
+}
+
+.envelope-scene {
+  position: relative !important;
+  isolation: isolate !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 355 / 368 !important;
+  overflow: hidden !important;
+}
+
+.envelope-back,
+.envelope-front {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  pointer-events: none !important;
+}
+
+.envelope-back {
+  z-index: 1 !important;
+}
+
+.letter-insert {
+  position: absolute !important;
+  left: 8% !important;
+  top: 4% !important;
+  width: 84% !important;
+  aspect-ratio: 387 / 529 !important;
+  z-index: 2 !important;
+  overflow: visible !important;
+  transform: translateY(24%) !important;
+  transform-origin: 50% 85% !important;
+  transition: transform .58s cubic-bezier(.2,.75,.25,1) !important;
+  pointer-events: none !important;
+}
+
+.letter-paper {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  transform: none !important;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.13)) !important;
+}
+
+.letter-message {
+  position: absolute !important;
+  top: 8% !important;
+  left: 14% !important;
+  width: 72% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  opacity: 0 !important;
+  transform: none !important;
+  transition: opacity .22s ease !important;
+  color: var(--navy) !important;
+  font: 700 clamp(11px, .95vw, 14px)/1.2 var(--hand) !important;
+  text-align: left !important;
+  text-shadow: 0 1px rgba(255,255,255,.35) !important;
+  pointer-events: none !important;
+}
+
+.letter-message strong {
+  font-size: clamp(14px, 1.2vw, 17px) !important;
+}
+
+.letter-message span,
+.letter-message em {
+  font-size: clamp(11px, .9vw, 13px) !important;
+  line-height: 1.25 !important;
+}
+
+.letter-message em {
+  color: var(--green-dark) !important;
+  font-style: normal !important;
+  margin-top: 2px !important;
+}
+
+.envelope-front {
+  z-index: 4 !important;
+  clip-path: inset(38% 0 0 0) !important;
+  -webkit-clip-path: inset(38% 0 0 0) !important;
+  filter: drop-shadow(0 5px 4px rgba(0,0,0,.1)) !important;
+}
+
+/* Saat tertutup, ujung surat hanya sedikit menyembul; saat dibuka, naik secukupnya. */
+
+.envelope-widget.is-open .letter-insert {
+  transform: translateY(5%) !important;
+}
+
+.envelope-widget.is-open .letter-message {
+  opacity: 1 !important;
+  transition-delay: .1s !important;
+}
+
+.tap-hint {
+  margin: 4px 0 0 !important;
+  text-align: center !important;
+}
+
+/* Setiap kartu proyek tersusun dari atas ke bawah: nomor, preview 16:9, lalu keterangan. */
+
+.project-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  min-width: 0 !important;
+  padding: 25px 27px 27px !important;
+}
+
+.project-index {
+  position: static !important;
+  align-self: flex-start !important;
+  margin: 0 0 12px !important;
+  font-size: 17px !important;
+}
+
+.project-visual {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  margin: 0 0 17px !important;
+  flex: 0 0 auto !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  overflow: hidden !important;
+}
+
+.project-visual > img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.project-copy {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+.project-copy h3 {
+  margin-top: 7px !important;
+}
+
+@media (max-width: 1000px) {
+  .top-peripherals {
+    grid-template-columns: minmax(0,1fr) minmax(190px,245px) !important;
+  }
+
+  .portfolio-title-image {
+    max-width: 100% !important;
+  }
+
+  .envelope-widget {
+    max-width: 245px !important;
+  }
+
+  .project-card {
+    padding: 22px 22px 24px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .top-peripherals {
+    grid-template-columns: minmax(0,1fr) !important;
+    grid-template-areas: "title" "envelope" !important;
+    min-height: 0 !important;
+    gap: 9px !important;
+    padding: 14px 12px 12px !important;
+  }
+
+  .portfolio-banner {
+    padding: 4px 0 8px !important;
+    text-align: center !important;
+  }
+
+  .portfolio-title-image {
+    width: min(100%, 650px) !important;
+    margin: 0 auto !important;
+    object-position: center !important;
+  }
+
+  .envelope-widget {
+    width: min(66vw, 235px) !important;
+    max-width: 235px !important;
+    justify-self: center !important;
+  }
+
+  .letter-message {
+    font-size: 11px !important;
+  }
+
+  .letter-message strong {
+    font-size: 14px !important;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 11px !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .project-card {
+    padding: 24px 23px 25px !important;
+  }
+
+  .project-visual {
+    margin-bottom: 15px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .envelope-widget {
+    width: min(69vw, 210px) !important;
+  }
+
+  .project-card {
+    padding: 20px 18px 22px !important;
+  }
+}
+
+/* ===== Penyesuaian aset hasil crop ===== */
+
+/* Rasio mengikuti ukuran gambar asli, bukan kanvas lama yang masih punya ruang kosong. */
+
+.intro-book {
+  aspect-ratio: 544 / 340 !important;
+}
+
+.book-art {
+  object-fit: fill !important;
+}
+
+.portrait-paper {
+  width: min(100%, 290px) !important;
+  aspect-ratio: 328 / 446 !important;
+}
+
+.lined-paper {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+}
+
+/* Paku baru sudah punya sudut diagonal sendiri, jadi tidak diputar dua kali. */
+
+.photo-pin {
+  width: 40px !important;
+  height: 40px !important;
+  right: 8% !important;
+  top: -2% !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+.panel-pin {
+  width: 38px !important;
+  height: 38px !important;
+  top: -12px !important;
+  left: 21px !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+/* Ukuran amplop dan surat mengikuti versi PNG yang sudah dipotong rapat. */
+
+.envelope-scene {
+  aspect-ratio: 335 / 349 !important;
+}
+
+.letter-insert {
+  left: 8% !important;
+  top: 4% !important;
+  width: 84% !important;
+  aspect-ratio: 352 / 494 !important;
+}
+
+.letter-paper {
+  object-fit: fill !important;
+}
+
+/* Siluet kertas tetap terlihat sampai ke tepi; jangan tambah kotak solid di belakangnya. */
+
+.paper-panel,
+.organization-panel,
+.education-panel,
+.project-card,
+.skill-tile,
+.contact-form,
+.intro-layout {
+  background-color: transparent !important;
+}
+
+.paper-panel,
+.organization-panel,
+.education-panel,
+.project-card,
+.skill-tile,
+.contact-form,
+.intro-layout {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+
+.skill-tile {
+  background-image: url("assets/kertas-sobek.png") !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 7px 6px rgba(0,0,0,.15)) !important;
+}
+
+.organization-panel {
+  background-image: url("assets/kertas-kuning.png") !important;
+}
+
+.paper-panel,
+.education-panel,
+.contact-form,
+.project-card,
+.intro-layout {
+  background-image: url("assets/kertas-sobek.png") !important;
+}
+
+/* Di ponsel, kertas tetap menyesuaikan ruang tanpa rasio foto atau buku terdistorsi. */
+
+@media (max-width: 760px) {
+  .portrait-paper {
+    width: min(68%, 245px) !important;
+  }
+
+  .photo-pin {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .panel-pin {
+    width: 32px !important;
+    height: 32px !important;
+    top: -9px !important;
+    left: 17px !important;
+  }
+}
+
+/* ===== Penataan ulang area pembuka ===== */
+
+/* Sapaan kecil berada tepat di atas judul, dengan tepi kiri yang sama. */
+
+.top-peripherals {
+  grid-template-columns: minmax(0, 1fr) minmax(238px, 282px) !important;
+  grid-template-areas: "title envelope" !important;
+  align-items: center !important;
+  column-gap: clamp(22px, 3vw, 42px) !important;
+  min-height: 320px !important;
+  padding: 20px clamp(20px, 3vw, 42px) 18px !important;
+}
+
+.portfolio-banner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: clamp(7px, .8vw, 12px) !important;
+  width: 100% !important;
+  max-width: 870px !important;
+  margin: 0 !important;
+  padding: 5px 0 8px !important;
+  text-align: left !important;
+  transform: none !important;
+}
+
+.welcome-title-image {
+  display: block !important;
+  width: min(73%, 650px) !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  margin: 0 !important;
+  align-self: flex-start !important;
+  filter: drop-shadow(1px 3px 0 rgba(0,0,0,.09));
+}
+
+.portfolio-title-image {
+  display: block !important;
+  width: 100% !important;
+  max-width: 870px !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  align-self: flex-start !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  filter: drop-shadow(2px 4px 0 rgba(0,0,0,.12));
+}
+
+/* Biarkan halaman asli buku terlihat; jangan menaruh kertas sobek di atasnya. */
+
+.intro-layout {
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Geser biodata sedikit ke kanan, tanpa mengubah posisi foto di halaman kiri. */
+
+.intro-copy {
+  position: relative;
+  left: clamp(5px, 1vw, 14px);
+  background: transparent !important;
+}
+
+/*
+ * Amplop memakai gambar lengkap sebagai lapisan belakang, surat di tengah,
+ * lalu hanya lipatan depan yang dipotong berbentuk V di lapisan teratas.
+ */
+
+.envelope-widget {
+  width: 100% !important;
+  max-width: 282px !important;
+  align-self: center !important;
+  margin: 0 !important;
+  z-index: 3 !important;
+}
+
+.envelope-scene {
+  position: relative !important;
+  isolation: isolate !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 335 / 349 !important;
+  overflow: hidden !important;
+  contain: paint;
+}
+
+.envelope-trigger {
+  width: 100% !important;
+  height: auto !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.envelope-back,
+.envelope-front {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  pointer-events: none !important;
+}
+
+.envelope-back {
+  z-index: 1 !important;
+}
+
+.letter-insert {
+  position: absolute !important;
+  left: 6% !important;
+  top: 5% !important;
+  width: 88% !important;
+  height: auto !important;
+  aspect-ratio: 352 / 494 !important;
+  z-index: 2 !important;
+  overflow: hidden !important;
+  transform: translateY(31%) !important;
+  transform-origin: 50% 85% !important;
+  transition: transform .62s cubic-bezier(.18,.75,.25,1) !important;
+  pointer-events: none !important;
+}
+
+.letter-paper {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  transform: none !important;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.13)) !important;
+}
+
+.letter-message {
+  position: absolute !important;
+  z-index: 3 !important;
+  top: 4.5% !important;
+  left: 14% !important;
+  width: 72% !important;
+  max-height: 31% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  transform: none !important;
+  transition: opacity .18s ease !important;
+  color: var(--navy) !important;
+  font: 700 clamp(10px, .84vw, 12px)/1.14 var(--hand) !important;
+  text-align: left !important;
+  text-shadow: 0 1px rgba(255,255,255,.35) !important;
+  pointer-events: none !important;
+}
+
+.letter-message strong {
+  font-size: clamp(13px, 1.05vw, 15px) !important;
+  line-height: 1.12 !important;
+}
+
+.letter-message span,
+.letter-message em {
+  font-size: clamp(10px, .82vw, 12px) !important;
+  line-height: 1.14 !important;
+}
+
+.letter-message em {
+  color: var(--green-dark) !important;
+  font-style: normal !important;
+  margin-top: 1px !important;
+}
+
+/* Garis V ini hanya menampilkan bagian depan amplop; sisi dan flap tetap di belakang surat. */
+
+.envelope-front {
+  z-index: 4 !important;
+  clip-path: polygon(0 32%, 28% 39%, 50% 52%, 72% 39%, 100% 32%, 100% 100%, 0 100%) !important;
+  -webkit-clip-path: polygon(0 32%, 28% 39%, 50% 52%, 72% 39%, 100% 32%, 100% 100%, 0 100%) !important;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,.1)) !important;
+}
+
+/* Tertutup: hanya tepi atas surat yang tampak. Terbuka: surat naik ke atas mulut amplop. */
+
+.envelope-widget:not(.is-open) .letter-insert {
+  transform: translateY(31%) !important;
+}
+
+.envelope-widget.is-open .letter-insert {
+  transform: translateY(5%) !important;
+}
+
+.envelope-widget.is-open .letter-message {
+  opacity: 1 !important;
+  transition-delay: .1s !important;
+}
+
+.tap-hint {
+  margin: 5px 0 0 !important;
+  text-align: center !important;
+}
+
+/* Pin diturunkan sedikit supaya benar-benar menempel pada tepi kertas. */
+
+.photo-pin {
+  width: 40px !important;
+  height: 40px !important;
+  top: 3.5% !important;
+  right: 8% !important;
+  transform: none !important;
+  object-fit: contain !important;
+}
+
+.panel-pin {
+  width: 36px !important;
+  height: 36px !important;
+  top: -3px !important;
+  left: 22px !important;
+  transform: none !important;
+  object-fit: contain !important;
+}
+
+/* Garis timeline berada di celah antara badge tahun dan keterangan. */
+
+.education-list li {
+  grid-template-columns: 128px minmax(0, 1fr) !important;
+  gap: 12px !important;
+}
+
+.education-list::before {
+  left: 108px !important;
+  z-index: 0 !important;
+}
+
+.edu-year {
+  position: relative !important;
+  z-index: 2 !important;
+  white-space: nowrap !important;
+}
+
+/* Pada layar kecil, judul tetap bertepi kiri sama dan tidak menyisakan ruang berlebih. */
+
+@media (max-width: 1000px) {
+  .top-peripherals {
+    grid-template-columns: minmax(0, 1fr) minmax(210px, 245px) !important;
+    min-height: 300px !important;
+    column-gap: 18px !important;
+    padding-inline: 18px !important;
+  }
+
+  .portfolio-banner {
+    max-width: 100% !important;
+  }
+
+  .welcome-title-image {
+    width: min(76%, 570px) !important;
+  }
+
+  .portfolio-title-image {
+    max-width: 100% !important;
+  }
+
+  .envelope-widget {
+    max-width: 245px !important;
+  }
+
+  .intro-copy {
+    left: 7px;
+  }
+
+  .education-list li {
+    grid-template-columns: 122px minmax(0, 1fr) !important;
+  }
+
+  .education-list::before {
+    left: 103px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .top-peripherals {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas: "title" "envelope" !important;
+    min-height: 0 !important;
+    row-gap: 12px !important;
+    padding: 16px 16px 16px !important;
+  }
+
+  .portfolio-banner {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 8px !important;
+    padding: 4px 0 5px !important;
+  }
+
+  .welcome-title-image {
+    width: min(75%, 470px) !important;
+  }
+
+  .portfolio-title-image {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .envelope-widget {
+    width: min(66vw, 235px) !important;
+    max-width: 235px !important;
+    justify-self: center !important;
+  }
+
+  .intro-copy {
+    left: 0;
+  }
+
+  .education-list li {
+    grid-template-columns: 116px minmax(0,1fr) !important;
+    gap: 10px !important;
+  }
+
+  .education-list::before {
+    left: 99px !important;
+  }
+
+  .panel-pin {
+    top: -1px !important;
+    left: 18px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .photo-pin {
+    top: 3% !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .welcome-title-image {
+    width: 78% !important;
+  }
+
+  .envelope-widget {
+    width: min(70vw, 215px) !important;
+  }
+
+  .letter-message {
+    font-size: 10px !important;
+  }
+
+  .letter-message strong {
+    font-size: 12px !important;
+  }
+
+  .letter-message span,
+  .letter-message em {
+    font-size: 9.5px !important;
+  }
+}
+
+/* Surat sedikit lebih naik saat dibuka; semua tulisan berada di atas lipatan depan. */
+
+.letter-message {
+  top: .5% !important;
+  left: 12% !important;
+  width: 76% !important;
+  max-height: none !important;
+  overflow: visible !important;
+  gap: 1px !important;
+  font-size: clamp(9.5px, .8vw, 11px) !important;
+  line-height: 1.1 !important;
+}
+
+.letter-message strong {
+  font-size: clamp(12px, 1vw, 14px) !important;
+}
+
+.letter-message span,
+.letter-message em {
+  font-size: clamp(9.5px, .78vw, 11px) !important;
+  line-height: 1.1 !important;
+}
+
+.envelope-widget.is-open .letter-insert {
+  transform: translateY(-1%) !important;
+}
+
+/* ===== Tipografi, amplop, dan proyek ===== */
+
+/* Samakan warna seluruh wordmark di navigasi. */
+
+.brand-name,
+.brand-name span {
+  color: var(--green) !important;
+}
+
+/* Nama tampil lebih bersih dan tegas tanpa mengubah palet scrapbook. */
+
+.intro-copy h1 {
+  font-family: "Sora", "Montserrat", sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -1.4px !important;
+  line-height: 1.04 !important;
+  font-size: clamp(37px, 4vw, 53px) !important;
+}
+
+.intro-copy h1 span {
+  font-family: "Sora", "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -1.65px !important;
+  font-size: clamp(28px, 3.05vw, 40px) !important;
+  line-height: 1.1 !important;
+}
+
+/* Pindahkan biodata sedikit menjauh dari lipatan tengah buku. */
+
+.intro-copy {
+  position: relative !important;
+  left: clamp(36px, 3.5vw, 50px) !important;
+  padding-right: clamp(8px, 1.25vw, 17px) !important;
+  max-width: 100% !important;
+}
+
+/* Amplop punya batas potong yang tegas; tidak ada ujung surat yang bocor di bawah. */
+
+.envelope-scene {
+  overflow: hidden !important;
+  contain: paint !important;
+  clip-path: inset(0 0 1.5% 0) !important;
+}
+
+.envelope-trigger {
+  overflow: hidden !important;
+  clip-path: inset(0 0 1.5% 0) !important;
+}
+
+.envelope-back,
+.envelope-front {
+  top: 0 !important;
+  bottom: -2.5% !important;
+  height: 102.5% !important;
+  object-fit: fill !important;
+}
+
+.letter-insert {
+  left: 6% !important;
+  top: -4% !important;
+  width: 88% !important;
+  height: auto !important;
+  aspect-ratio: 352 / 494 !important;
+  overflow: hidden !important;
+  clip-path: inset(0 0 22% 0) !important;
+  z-index: 2 !important;
+  transform: translateY(18%) !important;
+  transform-origin: 50% 84% !important;
+  transition: transform .58s cubic-bezier(.18,.75,.25,1) !important;
+}
+
+.letter-paper {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+}
+
+.letter-message {
+  top: 11% !important;
+  left: 12% !important;
+  width: 76% !important;
+  max-height: 56% !important;
+  overflow: hidden !important;
+  gap: 3px !important;
+  color: #171914 !important;
+  font-family: var(--hand) !important;
+  font-size: clamp(11px, .95vw, 13px) !important;
+  font-weight: 700 !important;
+  line-height: 1.22 !important;
+  text-shadow: none !important;
+  opacity: 0 !important;
+  transform: translateY(2px) !important;
+}
+
+.letter-message strong {
+  color: #171914 !important;
+  font-size: clamp(14px, 1.12vw, 16px) !important;
+  line-height: 1.2 !important;
+}
+
+.letter-message span,
+.letter-message em {
+  color: #171914 !important;
+  font-size: clamp(11px, .92vw, 13px) !important;
+  line-height: 1.22 !important;
+}
+
+.letter-message em {
+  font-style: normal !important;
+  margin-top: 2px !important;
+}
+
+.envelope-front {
+  z-index: 4 !important;
+  clip-path: polygon(0 32%, 28% 39%, 50% 52%, 72% 39%, 100% 32%, 100% 100%, 0 100%) !important;
+  -webkit-clip-path: polygon(0 32%, 28% 39%, 50% 52%, 72% 39%, 100% 32%, 100% 100%, 0 100%) !important;
+}
+
+.envelope-widget:not(.is-open) .letter-insert {
+  transform: translateY(18%) !important;
+}
+
+.envelope-widget.is-open .letter-insert {
+  transform: translateY(-4%) !important;
+}
+
+.envelope-widget.is-open .letter-message {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition-delay: .1s !important;
+}
+
+.projects-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+.project-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  min-width: 0 !important;
+}
+
+.project-index {
+  order: 0 !important;
+}
+
+.project-visual {
+  order: -1 !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 0 17px !important;
+  flex: 0 0 auto !important;
+  overflow: hidden !important;
+}
+
+.project-visual > img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+}
+
+.project-copy {
+  order: 1 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.project-copy h3 {
+  font-family: "Sora", "Montserrat", sans-serif !important;
+  font-size: clamp(18px, 1.8vw, 23px) !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.6px !important;
+}
+
+.project-copy p {
+  font-size: 12px !important;
+  line-height: 1.75 !important;
+}
+
+.visual-ceki {
+  padding: 0 !important;
+  background: #14231d !important;
+}

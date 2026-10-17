@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b7a30">
+  <meta name="description" content="Portofolio Lucky Luqmanul Hakim, mahasiswa Pendidikan Ilmu Komputer UPI yang tertarik pada pengembangan web, UI/UX, dan penulisan teknis.">
+  <title>lukayproject - Portofolio Lucky Luqmanul Hakim</title>
+  <link rel="icon" href="assets/logo-lukayproject.png" type="image/png">
+
+  <!-- Font tulisan tangan dan sans-serif agar nuansanya tetap scrapbook -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gaegu:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=20261017b">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Navigasi utama -->
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Navigasi utama">
+      <a class="brand" href="#Beranda" aria-label="lukayproject, kembali ke beranda">
+        <span class="brand-mark"><img src="assets/logo-lukayproject.png" alt="Logo lukayproject"></span>
+        <span class="brand-name">lukay<span>project</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Buka menu navigasi">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="mainNav">
+        <a href="#Tentang" class="nav-link">Tentang</a>
+        <a href="#Pendidikan" class="nav-link">Pendidikan</a>
+        <a href="#Pengalaman" class="nav-link">Organisasi</a>
+        <a href="#Proyek" class="nav-link">Proyek</a>
+        <a href="#Keahlian" class="nav-link">Keahlian</a>
+        <a href="#Kontak" class="nav-link">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Judul portofolio, pemutar lagu, dan amplop interaktif -->
+    <section class="opening-area" id="Beranda" aria-label="Pembuka portofolio">
+      <div class="top-peripherals">
+
+        <div class="portfolio-banner" aria-label="Welcome to my portfolio — Lucky Luqmanul Hakim">
+          <!-- Sapaan dan judul memakai PNG transparan agar tekstur kolase tetap tajam. -->
+          <img class="welcome-title-image" src="assets/welcome.png" alt="Welcome to my">
+          <img class="portfolio-title-image" src="assets/portofolio-title.png" alt="Portofolio Lucky Luqmanul Hakim">
+        </div>
+
+        <!-- Audio untuk pemutar lagu mini -->
+        <audio id="myAudio">
+          <source src="assets/kita ke sana.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Pemutar audio mini -->
+        <div class="spotify-popup-mini">
+          <div class="mini-top-row">
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b27349bdf0e981cbba25d48b44e0"
+              alt="Sampul album"
+              class="mini-art"
+            >
+            <div class="mini-details">
+              <p class="mini-title">Kita ke Sana</p>
+              <p class="mini-artist">Hindia</p>
+            </div>
+            <div class="mini-controls">
+              <button
+                  class="btn-mini-play"
+                  id="playBtn"
+                  type="button"
+                  aria-label="Putar lagu"
+                  aria-pressed="false">
+                  <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mini-time-row">
+            <span class="time-text" id="currentTime">0:00</span>
+            <div class="mini-progress-bar" id="progressBar">
+              <div class="mini-progress-juice" id="progressJuice"></div>
+            </div>
+            <span class="time-text" id="duration">0:00</span>
+          </div>
+        </div>
+
+        <!-- Amplop interaktif -->
+        <div class="envelope-widget">
+          <p class="envelope-caption">ada surat kecil buat kamu</p>
+          <button class="envelope-trigger" id="letterTrigger" type="button" aria-expanded="false" aria-controls="letterMessage" aria-label="Buka surat dari Lucky">
+            <span class="envelope-scene">
+              <!-- Surat bergerak di antara badan amplop dan lapisan depannya. -->
+              <img class="envelope-back" src="assets/amplop.png" alt="" aria-hidden="true">
+              <span class="letter-insert" aria-hidden="true">
+                <img class="letter-paper" src="assets/surat.png" alt="">
+                <span class="letter-message" id="letterMessage">
+                  <strong>Hai, manteteman!</strong>
+                  <span>Terima kasih sudah mampir. Kalau kamu tertarik berkolaborasi, yuk kita ngobrol.</span>
+                  <em>Salam hangat, Lucky</em>
+                </span>
+              </span>
+              <img class="envelope-front" src="assets/amplop-depan.png" alt="" aria-hidden="true">
+            </span>
+          </button>
+          <p class="tap-hint" id="tapHint">klik amplop untuk membuka surat</p>
+        </div>
+      </div>
+
+      <!-- Buku ini adalah gambar aset tersendiri; isi buku tetap berupa teks HTML. -->
+      <section class="intro-book" id="Tentang" aria-labelledby="introTitle">
+        <img class="book-art" src="assets/buku-terbuka.png" alt="Buku terbuka dengan halaman kertas krem">
+        <img class="about-me-label" src="assets/about-me.png" alt="about me" aria-hidden="true">
+        </div>
+        
+        <div class="intro-layout">
+          <div class="portrait-side">
+            <div class="portrait-paper">
+              <img class="lined-paper" src="assets/kertas-kuning.png" alt="" aria-hidden="true">
+              <img class="portrait-photo" src="assets/foto-lucky.webp" alt="Foto Lucky Luqmanul Hakim">
+              <img class="photo-pin" src="assets/paku-pin.png" alt="" aria-hidden="true">
+              <span class="photo-star star-one">✳</span>
+              <span class="photo-star star-two">☆</span>
+            </div>
+            <p class="photo-caption">"pengen jadi orang yang ga gampang berharap dan terlalu excited sama sesuatu"</p>
+          </div>
+
+          <div class="intro-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> halo, selamat datang di ruang kecil saya</p>
+            <img class="intro-name-image" id="introTitle" src="assets/nama-lucky.png" alt="Lucky Luqmanul Hakim">
+            <p class="intro-role">Mahasiswa Pendidikan Ilmu Komputer · Frontend Developer</p>
+            <p class="intro-description">Saya mahasiswa Pendidikan Ilmu Komputer Universitas Pendidikan Indonesia yang tertarik pada pengembangan web, UI/UX, dan penulisan teknis. Saya senang mengubah ide menjadi pengalaman digital yang rapi, interaktif, dan mudah digunakan.</p>
+            <p class="intro-description">Bagi saya, desain dan kode berjalan beriringan. Keduanya membutuhkan rasa ingin tahu, ketelitian, dan keberanian untuk terus mencoba hal baru.</p>
+            <div class="profile-facts">
+              <span><b>NIM</b> 2502736</span>
+              <span><b>Kampus</b> UPI Bandung</span>
+              <span><b>Fokus</b> Web · UI/UX · Menulis</span>
+            </div>
+            <div class="intro-actions">
+              <a class="sticker-button button-green" href="#Proyek">Lihat karya <span>↗</span></a>
+              <a class="sticker-button button-paper" href="https://drive.google.com/file/d/1WIfUOVzdFMNwYy8nvwibHAOW4l3-ou8Z/view" target="_blank" rel="noreferrer">Lihat CV <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Pembatas handmade antarbagian -->
+    <div class="section-divider" aria-hidden="true"><span></span><b>✳</b><span></span></div>
+
+    <!-- Riwayat organisasi dan pendidikan -->
+    <section class="content-grid two-column" aria-label="Pengalaman organisasi dan pendidikan">
+      <section class="paper-panel organization-panel" id="Pengalaman" aria-labelledby="orgTitle">
+        <img class="panel-pin" src="assets/paku-pin.png" alt="" aria-hidden="true">
+        <div class="section-heading">
+          <span class="heading-doodle">✳</span>
+          <p class="section-kicker">berproses bersama banyak orang</p>
+          <h2 id="orgTitle">Pengalaman Organisasi</h2>
+          <span class="heading-underline"></span>
+        </div>
+        <ol class="experience-list">
+          <li><span class="timeline-dot"></span><div><strong>Kadiv PDDD</strong><p>MAN1S Competition <b>2023</b></p></div></li>
+          <li><span class="timeline-dot"></span><div><strong>Staf Divisi Fasilitator</strong><p>Inaugurasi Kemakom <b>2025</b></p></div></li>
+          <li><span class="timeline-dot"></span><div><strong>Staf Divisi Teklap</strong><p>Formas Go To School <b>2026</b></p></div></li>
+          <li><span class="timeline-dot"></span><div><strong>Staf Divisi Logistik</strong><p>MOKAPRODI <b>2026</b></p></div></li>
+          <li><span class="timeline-dot"></span><div><strong>Pemandu Kelompok</strong><p>RAM Kemakom <b>2026</b></p></div></li>
+          <li><span class="timeline-dot"></span><div><strong>Mentor</strong><p>BMAIL Kaderisasi Kemakom <b>2026</b></p></div></li>
+          <li><span class="timeline-dot"></span><div><strong>Kadiv Logistik</strong><p>TITIK TEMU <b>2026</b></p></div></li>
+          <li><span class="timeline-dot"></span><div><strong>Ketua Pelaksana</strong><p>ADVOSCHOOL <b>2026</b></p></div></li>
+        </ol>
+        <p class="panel-footnote">Belajar mengatur detail, mendengar tim, dan menyelesaikan hal bersama.</p>
+      </section>
+
+      <section class="paper-panel education-panel" id="Pendidikan" aria-labelledby="educationTitle">
+        <img class="panel-pin" src="assets/paku-pin.png" alt="" aria-hidden="true">
+        <div class="section-heading">
+          <span class="heading-doodle cap-doodle">⌂</span>
+          <p class="section-kicker">langkah yang membentuk saya</p>
+          <h2 id="educationTitle">Pendidikan</h2>
+          <span class="heading-underline"></span>
+        </div>
+        <ol class="education-list">
+          <li><span class="edu-year">2010–2013</span><div><strong>TK IT Al-Hidayah</strong><p>Pendidikan usia dini</p></div></li>
+          <li><span class="edu-year">2013–2019</span><div><strong>SDN Sanca 3</strong><p>Pendidikan dasar</p></div></li>
+          <li><span class="edu-year">2019–2022</span><div><strong>MTs Al-Hidayah</strong><p>Pendidikan menengah pertama</p></div></li>
+          <li><span class="edu-year">2022–2025</span><div><strong>MAN 1 Subang</strong><p>Pendidikan menengah atas</p></div></li>
+          <li class="current-education"><span class="edu-year">2025–sekarang</span><div><strong>Universitas Pendidikan Indonesia</strong><p>S1 Pendidikan Ilmu Komputer</p><span class="now-tag">sedang berjalan</span></div></li>
+        </ol>
+        <div class="campus-note">Bismillah S2 Informatika ITB 🤲😹</div>
+      </section>
+    </section>
+
+    <div class="section-divider divider-long" aria-hidden="true"><span></span><b>✂</b><span></span></div>
+
+    <!-- Empat proyek dengan tautan aktif; preview contoh bisa diganti dengan screenshot asli. -->
+    <section class="projects-section" id="Proyek" aria-labelledby="projectsTitle">
+      <div class="section-heading centered-heading">
+        <p class="section-kicker">beberapa hal yang saya bangun dan eksplorasi</p>
+        <h2 id="projectsTitle">Proyek & Eksperimen</h2>
+        <p class="section-intro">Empat proyek yang saya bangun untuk mengeksplorasi edukasi, produktivitas, permainan, dan pengelolaan basis data.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card project-featured">
+          <span class="project-index">01 / proyek utama</span>
+          <div class="project-visual project-image"><img src="assets/dunia-kalkulus.webp" alt="Tampilan website Dunia Kalkulus"></div>
+          <div class="project-copy">
+            <span class="project-tag">Website edukasi</span>
+            <h3>Website Dunia Kalkulus</h3>
+            <p>Platform belajar interaktif untuk membantu mahasiswa dan pelajar memahami kalkulus melalui visualisasi, materi terstruktur, dan latihan yang mudah dipahami.</p>
+            <a class="text-link" href="https://duniakalkulus.web.app/" target="_blank" rel="noreferrer">Buka website <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-index">02 / aplikasi web ceki score</span>
+          <div class="project-visual visual-ceki">
+            <img src="assets/ceki.png" alt="Preview Lukay Ceki Score">
+          </div>
+          <div class="project-copy">
+            <span class="project-tag">Pencatat skor digital</span>
+            <h3>Lukay Ceki Score</h3>
+            <p>Aplikasi web pencatat skor digital untuk permainan kartu tradisional Ceki. Menggantikan kertas konvensional dengan fitur hitung poin otomatis dan manajemen pemain secara <em>real-time</em>.</p>
+            <a class="text-link" href="https://ceki-score-tracker.web.app/" target="_blank" rel="noreferrer">Buka website <span>↗</span></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <span class="project-index">03 / produktivitas</span>
+          <div class="project-visual visual-task"><img src="assets/lukay-task-management.png" alt="Tampilan website Lukay Management"></div>
+          <div class="project-copy">
+            <span class="project-tag">Manajemen produktivitas</span>
+            <h3>Web Manajemen Tugas Harian</h3>
+            <p>Aplikasi web produktivitas untuk mencatat, melacak, dan mengatur tugas harian secara mudah dan <em>real-time</em>.</p>
+            <a class="text-link" href="https://lukay-task-management.netlify.app/" target="_blank" rel="noreferrer">Buka website <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-index">04 / basis data</span>
+          <div class="project-visual visual-sql"><img src="assets/sqlukay.png" alt="Tampilan website SQLukay"></div>
+          <div class="project-copy">
+            <span class="project-tag">Studio MySQL interaktif</span>
+            <h3>SQLukay - MySQL Studio</h3>
+            <p>Platform simulasi dan studio MySQL interaktif berbasis web untuk belajar, menulis, dan menguji kueri basis data secara langsung.</p>
+            <a class="text-link" href="https://sqlukay.vercel.app/" target="_blank" rel="noreferrer">Buka website <span>↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"><span></span><b>✳</b><span></span></div>
+
+    <!-- Keahlian tetap berdasarkan daftar pada website sumber, ditambah logo agar lebih visual. -->
+    <section class="skills-section" id="Keahlian" aria-labelledby="skillsTitle">
+      <div class="section-heading centered-heading">
+        <p class="section-kicker">alat yang sering saya gunakan</p>
+        <h2 id="skillsTitle">Keahlian</h2>
+        <p class="section-intro">Masih terus diasah melalui latihan, proyek, dan pengalaman berkolaborasi.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-tile"><span class="skill-logo"><img src="assets/icons/html5.svg" alt="Logo HTML5"></span><h3>HTML5</h3><p>Struktur web semantik dan aksesibilitas</p><div class="skill-track"><span style="--level:90%"></span></div><b class="skill-level">90%</b></article>
+        <article class="skill-tile"><span class="skill-logo"><img src="assets/icons/css3.svg" alt="Logo CSS3"></span><h3>CSS3</h3><p>Flexbox, Grid, desain responsif, dan animasi</p><div class="skill-track"><span style="--level:85%"></span></div><b class="skill-level">85%</b></article>
+        <article class="skill-tile"><span class="skill-logo"><img src="assets/icons/pen-tool.svg" alt="Ikon desain UI/UX"></span><h3>UI/UX Design</h3><p>Antarmuka yang ramah pengguna dan estetik</p><div class="skill-track"><span style="--level:80%"></span></div><b class="skill-level">80%</b></article>
+        <article class="skill-tile"><span class="skill-logo"><img src="assets/icons/javascript.svg" alt="Logo JavaScript"></span><h3>JavaScript</h3><p>Logika interaktif dan pemrograman web</p><div class="skill-track"><span style="--level:75%"></span></div><b class="skill-level">75%</b></article>
+        <article class="skill-tile"><span class="skill-logo"><img src="assets/icons/writing.svg" alt="Ikon penulisan teknis"></span><h3>Penulisan Teknis</h3><p>Konten pembelajaran dan dokumentasi teknis</p><div class="skill-track"><span style="--level:88%"></span></div><b class="skill-level">88%</b></article>
+      </div>
+      <div class="tool-strip" aria-label="Teknologi dan alat pendukung yang ditampilkan">
+        <span><img src="assets/icons/react.svg" alt="Logo React">React</span>
+        <span><img src="assets/icons/firebase.svg" alt="Logo Firebase">Firebase</span>
+        <span><img src="assets/icons/git.svg" alt="Logo Git">Git</span>
+        <span><img src="assets/icons/figma.svg" alt="Logo Figma">Figma</span>
+      </div>
+    </section>
+
+    <div class="section-divider divider-long" aria-hidden="true"><span></span><b>✂</b><span></span></div>
+
+    <!-- Kontak: semua alamat dan akun mengarah ke kontak asli pada halaman sumber. -->
+    <section class="contact-section" id="Kontak" aria-labelledby="contactTitle">
+      <div class="contact-copy">
+        <p class="section-kicker">punya ide yang ingin diwujudkan?</p>
+        <h2 id="contactTitle">Mari terhubung<span>!</span></h2>
+        <p>Saya terbuka untuk kolaborasi, proyek web baru, diskusi desain, atau sekadar bertukar ide. Kirim pesan, siapa tahu kita bisa membuat sesuatu yang bermanfaat bersama.</p>
+        <div class="contact-lines">
+          <a href="mailto:luckyluqmanulhakim@upi.edu"><span class="contact-icon"><img src="assets/icons/mail.svg" alt=""></span><span><small>EMAIL</small>luckyluqmanulhakim@upi.edu</span></a>
+          <a href="https://wa.me/62859110122200" target="_blank" rel="noreferrer"><span class="contact-icon"><img src="assets/icons/phone.svg" alt=""></span><span><small>WHATSAPP</small>+62 859-1101-22200</span></a>
+          <div><span class="contact-icon"><img src="assets/icons/map-pin.svg" alt=""></span><span><small>LOKASI</small>Subang, Jawa Barat</span></div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/luckyluqmn" target="_blank" rel="noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Logo Instagram"></a>
+          <a href="https://id.linkedin.com/in/lucky-luqmanul-hakim-16319437b" target="_blank" rel="noreferrer" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="Logo LinkedIn"></a>
+          <a href="https://www.facebook.com/luckyluqmanulhakim" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Logo Facebook"></a>
+          <span>follow along ↗</span>
+        </div>
+      </div>
+
+      <form class="contact-form paper-panel" id="contactForm">
+        <img class="panel-pin" src="assets/paku-pin.png" alt="" aria-hidden="true">
+        <p class="form-kicker">tinggalkan catatan</p>
+        <h3>Kirim Pesan</h3>
+        <label for="senderName">Nama lengkap</label>
+        <input id="senderName" name="name" type="text" placeholder="Nama kamu" required>
+        <label for="senderEmail">Alamat email</label>
+        <input id="senderEmail" name="email" type="email" placeholder="nama@email.com" required>
+        <label for="senderMessage">Pesan</label>
+        <textarea id="senderMessage" name="message" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
+        <button class="sticker-button button-green submit-button" type="submit">Siapkan email <span>↗</span></button>
+        <p class="form-note" id="formNote">Tombol ini akan membuka aplikasi email kamu dengan pesan yang sudah disiapkan.</p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Penutup halaman -->
+  <footer class="site-footer">
+    <img class="footer-totoro" src="assets/totoro.webp" alt="Ilustrasi Totoro">
+    <img class="footer-susuwatari" src="assets/susuwatari.png" alt="Ilustrasi Susuwatari">
+    <div class="footer-brand"><img src="assets/logo-lukayproject.png" alt="Logo lukayproject"><span>lukayproject</span></div>
+    <p>Makasii udah scroll sampe bawah guyzz</p>
+    <div class="footer-nav"><a href="#Beranda">Beranda</a><a href="#Tentang">Tentang</a><a href="#Pengalaman">Organisasi</a><a href="#Proyek">Proyek</a><a href="#Kontak">Kontak</a></div>
+    <small>© <span id="currentYear">2026</span> Lucky Luqmanul Hakim. Semua Hak Cipta Dilindungi.</small>
+  </footer>
+</body>
+</html>

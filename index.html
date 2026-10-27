@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gaegu:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261017b">
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -32,7 +32,6 @@
       <div class="nav-links" id="mainNav">
         <a href="#Tentang" class="nav-link">Tentang</a>
         <a href="#Pendidikan" class="nav-link">Pendidikan</a>
-        <a href="#Pengalaman" class="nav-link">Organisasi</a>
         <a href="#Proyek" class="nav-link">Proyek</a>
         <a href="#Keahlian" class="nav-link">Keahlian</a>
         <a href="#Kontak" class="nav-link">Kontak</a>
@@ -53,20 +52,20 @@
 
         <!-- Audio untuk pemutar lagu mini -->
         <audio id="myAudio">
-          <source src="assets/kita ke sana.mp3" type="audio/mpeg">
+          <source src="assets/membasuh.mp3" type="audio/mpeg">
         </audio>
 
         <!-- Pemutar audio mini -->
         <div class="spotify-popup-mini">
           <div class="mini-top-row">
             <img
-              src="https://i.scdn.co/image/ab67616d0000b27349bdf0e981cbba25d48b44e0"
+              src="https://i.scdn.co/image/ab67616d0000b273d623688488865906052ef96b"
               alt="Sampul album"
               class="mini-art"
             >
             <div class="mini-details">
-              <p class="mini-title">Kita ke Sana</p>
-              <p class="mini-artist">Hindia</p>
+              <p class="mini-title">Membasuh</p>
+              <p class="mini-artist">Hindia, Rara Sekar</p>
             </div>
             <div class="mini-controls">
               <button
@@ -100,6 +99,8 @@
                 <span class="letter-message" id="letterMessage">
                   <strong>Hai, manteteman!</strong>
                   <span>Terima kasih sudah mampir. Kalau kamu tertarik berkolaborasi, yuk kita ngobrol.</span>
+                  <span> </span>
+                  <span> </span>
                   <em>Salam hangat, Lucky</em>
                 </span>
               </span>
@@ -114,6 +115,7 @@
       <section class="intro-book" id="Tentang" aria-labelledby="introTitle">
         <img class="book-art" src="assets/buku-terbuka.png" alt="Buku terbuka dengan halaman kertas krem">
         <img class="about-me-label" src="assets/about-me.png" alt="about me" aria-hidden="true">
+        <img class="stiker-spider" src="assets/spider.png" alt="stiker spider" aria-hidden="true">
         </div>
         
         <div class="intro-layout">
@@ -187,7 +189,7 @@
           <li><span class="edu-year">2013–2019</span><div><strong>SDN Sanca 3</strong><p>Pendidikan dasar</p></div></li>
           <li><span class="edu-year">2019–2022</span><div><strong>MTs Al-Hidayah</strong><p>Pendidikan menengah pertama</p></div></li>
           <li><span class="edu-year">2022–2025</span><div><strong>MAN 1 Subang</strong><p>Pendidikan menengah atas</p></div></li>
-          <li class="current-education"><span class="edu-year">2025–sekarang</span><div><strong>Universitas Pendidikan Indonesia</strong><p>S1 Pendidikan Ilmu Komputer</p><span class="now-tag">sedang berjalan</span></div></li>
+          <li class="current-education"><span class="edu-year">2025–now</span><div><strong>Universitas Pendidikan Indonesia</strong><p>S1 Pendidikan Ilmu Komputer</p><span class="now-tag">sedang berjalan</span></div></li>
         </ol>
         <div class="campus-note">Bismillah S2 Informatika ITB 🤲😹</div>
       </section>
@@ -284,7 +286,7 @@
         <h2 id="contactTitle">Mari terhubung<span>!</span></h2>
         <p>Saya terbuka untuk kolaborasi, proyek web baru, diskusi desain, atau sekadar bertukar ide. Kirim pesan, siapa tahu kita bisa membuat sesuatu yang bermanfaat bersama.</p>
         <div class="contact-lines">
-          <a href="mailto:luckyluqmanulhakim@upi.edu"><span class="contact-icon"><img src="assets/icons/mail.svg" alt=""></span><span><small>EMAIL</small>luckyluqmanulhakim@upi.edu</span></a>
+          <a href="mailto:luckylukmanulhakim04@gmail.com"><span class="contact-icon"><img src="assets/icons/mail.svg" alt=""></span><span><small>EMAIL</small>luckylukmanulhakim04@gmail.com</span></a>
           <a href="https://wa.me/62859110122200" target="_blank" rel="noreferrer"><span class="contact-icon"><img src="assets/icons/phone.svg" alt=""></span><span><small>WHATSAPP</small>+62 859-1101-22200</span></a>
           <div><span class="contact-icon"><img src="assets/icons/map-pin.svg" alt=""></span><span><small>LOKASI</small>Subang, Jawa Barat</span></div>
         </div>
@@ -318,8 +320,8 @@
     <img class="footer-susuwatari" src="assets/susuwatari.png" alt="Ilustrasi Susuwatari">
     <div class="footer-brand"><img src="assets/logo-lukayproject.png" alt="Logo lukayproject"><span>lukayproject</span></div>
     <p>Makasii udah scroll sampe bawah guyzz</p>
-    <div class="footer-nav"><a href="#Beranda">Beranda</a><a href="#Tentang">Tentang</a><a href="#Pengalaman">Organisasi</a><a href="#Proyek">Proyek</a><a href="#Kontak">Kontak</a></div>
-    <small>© <span id="currentYear">2026</span> Lucky Luqmanul Hakim. Semua Hak Cipta Dilindungi.</small>
+    <div class="footer-nav"><a href="#Beranda">Beranda</a><a href="#Tentang">Tentang</a><a href="#Pendidikan">Pendidikan</a><a href="#Proyek">Proyek</a><a href="#Keahlian">Keahlian</a><a href="#Kontak">Kontak</a></div>
+    <small>© <span id="currentYear">2026</span> <strong>Lucky Luqmanul Hakim</strong>. Semua Hak Cipta Dilindungi.</small>
   </footer>
 </body>
 </html>

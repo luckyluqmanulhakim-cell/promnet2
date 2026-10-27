@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formNote.textContent = "Aplikasi email akan dibuka. Periksa kembali pesan sebelum dikirim.";
       }
 
-      window.location.href = `mailto:luckyluqmanulhakim@upi.edu?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:luckylukmanulhakim04@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 

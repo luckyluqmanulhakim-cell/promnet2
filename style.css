@@ -380,6 +380,31 @@ main {
   }
 }
 
+.stiker-spider {
+  position: absolute;
+  top: 6%;
+  right: 7%;
+  width: 90px;
+  height: auto;
+  display: block;
+  z-index: 3;
+  transform: rotate(10deg);
+  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, .15));
+  pointer-events: none;
+}
+
+/* Penyesuaian untuk layar HP */
+@media (max-width: 760px) {
+  .stiker-spider {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: clamp(105px, 30vw, 145px);
+    margin: 0 0 -20px 14px;
+    transform: rotate(-4deg);
+  }
+}
+
 .intro-layout {
   height: 100%;
   min-height: 0;
@@ -619,7 +644,7 @@ h1,h2,h3,p {
   /* Membuat susunan atas-bawah */
 
   gap: 10px;
-  z-index: 999;
+  z-index: 10;
   font-family: sans-serif;
   box-sizing: border-box;
   transform: scale(0.80);
@@ -816,10 +841,10 @@ h1,h2,h3,p {
   z-index: 5;
   top: -16px;
   left: 22px;
-  width: 32px;
+  width: 40px;
   height: 48px;
   object-fit: contain;
-  transform: rotate(-17deg);
+  transform: rotate(-70deg);
   filter: drop-shadow(1px 3px 2px #0003);
 }
 
@@ -3929,12 +3954,12 @@ h1,h2,h3,p {
 }
 
 .panel-pin {
-  width: 38px !important;
+  width: 40px !important;
   height: 38px !important;
   top: -12px !important;
   left: 21px !important;
   object-fit: contain !important;
-  transform: none !important;
+  transform: rotate(-70deg);
 }
 
 /* Ukuran amplop dan surat mengikuti versi PNG yang sudah dipotong rapat. */
@@ -4011,10 +4036,11 @@ h1,h2,h3,p {
   }
 
   .panel-pin {
-    width: 32px !important;
+    width: 40px !important;
     height: 32px !important;
     top: -9px !important;
     left: 17px !important;
+    transform: rotate(-70deg);
   }
 }
 
@@ -4237,11 +4263,11 @@ h1,h2,h3,p {
 }
 
 .panel-pin {
-  width: 36px !important;
+  width: 40px !important;
   height: 36px !important;
   top: -3px !important;
   left: 22px !important;
-  transform: none !important;
+  transform: rotate(-70deg);
   object-fit: contain !important;
 }
 
@@ -4349,8 +4375,9 @@ h1,h2,h3,p {
   .panel-pin {
     top: -1px !important;
     left: 18px !important;
-    width: 32px !important;
+    width: 40px !important;
     height: 32px !important;
+    transform: rotate(-70deg);
   }
 
   .photo-pin {
